@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Apr 22 17:18:03 2016
+Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+Revision Name : acc_project
+Top-level Entity Name : acc_project
+Family : Cyclone IV E
+Total logic elements : 266
+    Total combinational functions : 246
+    Dedicated logic registers : 162
+Total registers : 162
+Total pins : 19
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Feb 27 12:58:50 2016
+Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+Revision Name : de2lcd
+Top-level Entity Name : de2lcd
+Family : Cyclone IV E
+Total logic elements : 105
+    Total combinational functions : 103
+    Dedicated logic registers : 80
+Total registers : 80
+Total pins : 17
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

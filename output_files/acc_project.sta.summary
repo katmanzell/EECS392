@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk_50Mhz'
+Slack : -6.278
+TNS   : -345.870
+
+Type  : Slow 1200mV 85C Model Setup 'de2lcd:de2lcd_map|CLK_400HZ'
+Slack : -1.426
+TNS   : -43.053
+
+Type  : Slow 1200mV 85C Model Hold 'de2lcd:de2lcd_map|CLK_400HZ'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_50Mhz'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50Mhz'
+Slack : -3.000
+TNS   : -134.070
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'de2lcd:de2lcd_map|CLK_400HZ'
+Slack : -1.285
+TNS   : -77.100
+
+Type  : Slow 1200mV 0C Model Setup 'clk_50Mhz'
+Slack : -5.609
+TNS   : -304.699
+
+Type  : Slow 1200mV 0C Model Setup 'de2lcd:de2lcd_map|CLK_400HZ'
+Slack : -1.210
+TNS   : -33.167
+
+Type  : Slow 1200mV 0C Model Hold 'de2lcd:de2lcd_map|CLK_400HZ'
+Slack : 0.337
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_50Mhz'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50Mhz'
+Slack : -3.000
+TNS   : -134.070
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'de2lcd:de2lcd_map|CLK_400HZ'
+Slack : -1.285
+TNS   : -77.100
+
+Type  : Fast 1200mV 0C Model Setup 'clk_50Mhz'
+Slack : -2.532
+TNS   : -118.246
+
+Type  : Fast 1200mV 0C Model Setup 'de2lcd:de2lcd_map|CLK_400HZ'
+Slack : -0.146
+TNS   : -0.513
+
+Type  : Fast 1200mV 0C Model Hold 'de2lcd:de2lcd_map|CLK_400HZ'
+Slack : 0.172
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_50Mhz'
+Slack : 0.180
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50Mhz'
+Slack : -3.000
+TNS   : -111.412
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'de2lcd:de2lcd_map|CLK_400HZ'
+Slack : -1.000
+TNS   : -60.000
+
+------------------------------------------------------------

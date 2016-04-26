@@ -1,3 +1,4 @@
+`include "macros.vh"
 
 // I2C MPU-6050 Controller Module
 // Usage: controls the 2-bus I2C module
@@ -53,10 +54,10 @@
 	end
 	end
 
-	`Define SCL_POS (cnt == 3'd0);
-	`Define SCL_HIG (cnt == 3'd1);
-	`Define SCL_NEG (cnt == 3'd2);
-	`Define SCL_LOW (cnt == 3'd3);
+	`define SCL_POS (cnt == 3'd0);
+	`define SCL_HIG (cnt == 3'd1);
+	`define SCL_NEG (cnt == 3'd2);
+	`define SCL_LOW (cnt == 3'd3);
 
 	always @ (posedge clk or negedge rst_n)
 	begin
@@ -70,33 +71,33 @@
 
 	assign scl = scl_r; // scl clock signal
 
-	`Define DEVICE_READ 8'hD1 // addressable device, read
-	`Define DEVICE_WRITE 8'hD0 // addressable devices, writes
-	`Define ACC_XH 8'h3B // x-axis acceleration upper address
-	`Define ACC_XL 8'h3C // x-axis acceleration low address
-	`Define ACC_YH 8'h3D // y-axis acceleration upper address
-	`Define ACC_YL 8'h3E // y-axis acceleration low address
-	`Define ACC_ZH 8'h3F // z axis acceleration upper address
-	`Define ACC_ZL 8'h40 // z axis acceleration low address
-	`Define GYRO_XH 8'h43 // x-axis gyroscope upper address
-	`Define GYRO_XL 8'h44 // x-axis gyroscope low address
-	`Define GYRO_YH 8'h45 // y-axis gyroscope upper address
-	`Define GYRO_YL 8'h46 // y-axis gyroscope low address
-	`Define GYRO_ZH 8'h47 // z-axis gyroscope upper address
-	`Define GYRO_ZL 8'h48 // z-axis gyroscope low address
+	`define DEVICE_READ 8'hD1 // addressable device, read
+	`define DEVICE_WRITE 8'hD0 // addressable devices, writes
+	`define ACC_XH 8'h3B // x-axis acceleration upper address
+	`define ACC_XL 8'h3C // x-axis acceleration low address
+	`define ACC_YH 8'h3D // y-axis acceleration upper address
+	`define ACC_YL 8'h3E // y-axis acceleration low address
+	`define ACC_ZH 8'h3F // z axis acceleration upper address
+	`define ACC_ZL 8'h40 // z axis acceleration low address
+	`define GYRO_XH 8'h43 // x-axis gyroscope upper address
+	`define GYRO_XL 8'h44 // x-axis gyroscope low address
+	`define GYRO_YH 8'h45 // y-axis gyroscope upper address
+	`define GYRO_YL 8'h46 // y-axis gyroscope low address
+	`define GYRO_ZH 8'h47 // z-axis gyroscope upper address
+	`define GYRO_ZL 8'h48 // z-axis gyroscope low address
 
 	// Initialize the registers gyroscope
-	`Define PWR_MGMT_1 8'h6B
-	`Define SMPLRT_DIV 8'h19
-	`Define CONFIG1 8'h1A
-	`Define GYRO_CONFIG 8'h1B
-	`Define ACC_CONFIG 8'h1C
+	`define PWR_MGMT_1 8'h6B
+	`define SMPLRT_DIV 8'h19
+	`define CONFIG1 8'h1A
+	`define GYRO_CONFIG 8'h1B
+	`define ACC_CONFIG 8'h1C
 	// Gyroscope initialization value corresponds to the configuration register
-	`Define PWR_MGMT_1_VAL 8'h00
-	`Define SMPLRT_DIV_VAL 8'h07
-	`Define CONFIG1_VAL 8'h06
-	`Define GYRO_CONFIG_VAL 8'h18
-	`Define ACC_CONFIG_VAL 8'h01
+	`define PWR_MGMT_1_VAL 8'h00
+	`define SMPLRT_DIV_VAL 8'h07
+	`define CONFIG1_VAL 8'h06
+	`define GYRO_CONFIG_VAL 8'h18
+	`define ACC_CONFIG_VAL 8'h01
 
 	parameter IDLE = 4'd0;
 	parameter START1 = 4'd1;
@@ -163,10 +164,10 @@
 	sda_link <= 1'b1; // sda output
 	sda_r <= 1'b1; // pulled sda
 	db_r <= `DEVICE_WRITE; // write data to the slave address
-	state = START1;
+	state <= START1;
 	end
 	START1: begin // IIC start
-	if ( `SCL_HIG) // scl is high
+	if (`SCL_HIG) // scl is high
 	begin
 	sda_link <= 1'b1; // sda output
 	sda_r <= 1'b0; // low sda, generating start signal
@@ -174,7 +175,9 @@
 	num <= 4'd0;
 	end
 	else
+	begin
 	state <= START1;
+	end
 	end
 	ADD1: begin // write data
 	if ( `SCL_LOW) // scl low

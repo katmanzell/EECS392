@@ -1,3 +1,8 @@
+
+// I2C MPU-6050 Controller Module
+// Usage: controls the 2-bus I2C module
+
+// Clock is supposed to be at max i2c supported frequency!
 	module top (
 		clk,
 		scl,
@@ -9,7 +14,7 @@
 	output [7: 0] data;
 	inout sda;
 
-	reg [2: 0] cnt; // cnt = 0, rising_scl; cnt = 1, scl_high_intermediate; cnt = 2, scl_falling; cnt = 3, scl_low_intermediate
+	reg [2: 0] cnt; // cnt = 0, rising scl; cnt = 1, scl high intermediate; cnt = 2, scl falling; cnt = 3, scl low intermediate
 	reg [8: 0] cnt_sum; // generate the desired clock IIC
 	reg scl_r; // clock pulse generated
 

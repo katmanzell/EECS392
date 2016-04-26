@@ -1,5 +1,5 @@
 Analysis & Synthesis report for acc_project
-Tue Apr 26 15:37:24 2016
+Tue Apr 26 16:29:17 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -11,6 +11,7 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
   5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,7 +38,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Apr 26 15:37:24 2016           ;
+; Analysis & Synthesis Status        ; Failed - Tue Apr 26 16:29:17 2016           ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; acc_project                                 ;
 ; Top-level Entity Name              ; acc_project                                 ;
@@ -163,33 +164,41 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Tue Apr 26 15:37:09 2016
+    Info: Processing started: Tue Apr 26 16:28:57 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off acc_project -c acc_project
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(170) near text: ";";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 170
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(177) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 177
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(183) near text: ";";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 183
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(199) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 199
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(203) near text: ";";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 203
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(230) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 230
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(234) near text: ";";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 234
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(251) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 251
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(255) near text: ";";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 255
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(266) near text: "=";  expecting an operand. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 266
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(268) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 268
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(271) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 271
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(275) near text: ";";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 275
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(292) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 292
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(296) near text: ";";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 296
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(301) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 301
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(305) near text: ";";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 305
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(311) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 311
-Error (10170): Verilog HDL syntax error at mpu-6050_english.v(311) near text: ";";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 311
-Info (12021): Found 0 design units, including 0 entities, in source file mpu-6050_english.v
+Info (12021): Found 1 design units, including 1 entities, in source file mpu-6050_english.v
+    Info (12023): Found entity 1: top File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 7
+Error (10500): VHDL syntax error at acc_project.vhd(81) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 81
+Error (10500): VHDL syntax error at acc_project.vhd(82) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 82
+Error (10500): VHDL syntax error at acc_project.vhd(85) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 85
+Error (10500): VHDL syntax error at acc_project.vhd(88) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 88
+Error (10500): VHDL syntax error at acc_project.vhd(89) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 89
+Error (10500): VHDL syntax error at acc_project.vhd(90) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 90
+Error (10500): VHDL syntax error at acc_project.vhd(97) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 97
+Error (10500): VHDL syntax error at acc_project.vhd(98) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 98
+Error (10500): VHDL syntax error at acc_project.vhd(101) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 101
+Error (10500): VHDL syntax error at acc_project.vhd(104) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 104
+Error (10500): VHDL syntax error at acc_project.vhd(105) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 105
+Error (10500): VHDL syntax error at acc_project.vhd(106) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 106
+Error (10500): VHDL syntax error at acc_project.vhd(113) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 113
+Error (10500): VHDL syntax error at acc_project.vhd(114) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 114
+Error (10500): VHDL syntax error at acc_project.vhd(117) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 117
+Error (10500): VHDL syntax error at acc_project.vhd(120) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 120
+Error (10500): VHDL syntax error at acc_project.vhd(121) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 121
+Error (10500): VHDL syntax error at acc_project.vhd(122) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 122
+Error (10500): VHDL syntax error at acc_project.vhd(129) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 129
+Info (144001): Generated suppressed messages file F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/output_files/acc_project.map.smsg
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 19 errors, 0 warnings
-    Error: Peak virtual memory: 739 megabytes
-    Error: Processing ended: Tue Apr 26 15:37:24 2016
-    Error: Elapsed time: 00:00:15
-    Error: Total CPU time (on all processors): 00:00:28
+    Error: Peak virtual memory: 801 megabytes
+    Error: Processing ended: Tue Apr 26 16:29:17 2016
+    Error: Elapsed time: 00:00:20
+    Error: Total CPU time (on all processors): 00:00:39
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/output_files/acc_project.map.smsg.
 
 

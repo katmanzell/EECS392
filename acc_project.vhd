@@ -64,7 +64,7 @@
 
 	begin
 
-	Data_Handler : process(clk_50Mhz, addr, rw, data_rd-- parameters used here)
+	Data_Handler : process(clk_50Mhz, addr, rw, data_rd)-- parameters used here)
 
 
 		begin

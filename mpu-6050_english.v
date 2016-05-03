@@ -4,7 +4,7 @@
 // Usage: controls the 2-bus I2C module
 
 // Clock is supposed to be at max i2c supported frequency!
-module top (
+module MPU (
 	clk,
 	scl,
 	sda,

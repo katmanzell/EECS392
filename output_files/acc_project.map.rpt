@@ -1,5 +1,5 @@
 Analysis & Synthesis report for acc_project
-Fri Apr 22 17:18:03 2016
+Tue Apr 26 16:29:17 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -10,21 +10,8 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |acc_project|de2lcd:de2lcd_map|next_command
-  9. State Machine - |acc_project|de2lcd:de2lcd_map|state
- 10. State Machine - |acc_project|i2c_master:i2c_master_map|state
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for User Entity Instance: i2c_master:i2c_master_map
- 16. Port Connectivity Checks: "i2c_master:i2c_master_map"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -51,20 +38,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 22 17:18:03 2016       ;
+; Analysis & Synthesis Status        ; Failed - Tue Apr 26 16:29:17 2016           ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; acc_project                                 ;
 ; Top-level Entity Name              ; acc_project                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 266                                         ;
-;     Total combinational functions  ; 246                                         ;
-;     Dedicated logic registers      ; 162                                         ;
-; Total registers                    ; 162                                         ;
-; Total pins                         ; 19                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -160,287 +147,15 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
 +----------------------------+-------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                              ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                       ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
-; i2c/i2c_master.vhd               ; yes             ; User VHDL File  ; C:/Users/Magz/Desktop/acc/i2c/i2c_master.vhd       ;         ;
-; de2lcd/de2lcd/de2lcd.vhd         ; yes             ; User VHDL File  ; C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd ;         ;
-; acc_project.vhd                  ; yes             ; User VHDL File  ; C:/Users/Magz/Desktop/acc/acc_project.vhd          ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
-
-
-+---------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                   ;
-+---------------------------------------------+-----------------+
-; Resource                                    ; Usage           ;
-+---------------------------------------------+-----------------+
-; Estimated Total logic elements              ; 266             ;
-;                                             ;                 ;
-; Total combinational functions               ; 246             ;
-; Logic element usage by number of LUT inputs ;                 ;
-;     -- 4 input functions                    ; 89              ;
-;     -- 3 input functions                    ; 25              ;
-;     -- <=2 input functions                  ; 132             ;
-;                                             ;                 ;
-; Logic elements by mode                      ;                 ;
-;     -- normal mode                          ; 190             ;
-;     -- arithmetic mode                      ; 56              ;
-;                                             ;                 ;
-; Total registers                             ; 162             ;
-;     -- Dedicated logic registers            ; 162             ;
-;     -- I/O registers                        ; 0               ;
-;                                             ;                 ;
-; I/O pins                                    ; 19              ;
-;                                             ;                 ;
-; Embedded Multiplier 9-bit elements          ; 0               ;
-;                                             ;                 ;
-; Maximum fan-out node                        ; clk_50Mhz~input ;
-; Maximum fan-out                             ; 102             ;
-; Total fan-out                               ; 1139            ;
-; Average fan-out                             ; 2.50            ;
-+---------------------------------------------+-----------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                ;
-+--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+--------------+
-; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Library Name ;
-+--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+--------------+
-; |acc_project                   ; 246 (72)          ; 162 (40)     ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |acc_project                           ; work         ;
-;    |de2lcd:de2lcd_map|         ; 99 (99)           ; 81 (81)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acc_project|de2lcd:de2lcd_map         ; work         ;
-;    |i2c_master:i2c_master_map| ; 75 (75)           ; 41 (41)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |acc_project|i2c_master:i2c_master_map ; work         ;
-+--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |acc_project|de2lcd:de2lcd_map|next_command                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
-+----------------------------+----------------------------+--------------------------+---------------------+-------------------+---------------------+-----------------------+--------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+-----------------------+-------------------------+-----------------------+---------------------+
-; Name                       ; next_command.DISPLAY_CLEAR ; next_command.DISPLAY_OFF ; next_command.RESET3 ; next_command.HOLD ; next_command.RESET1 ; next_command.TOGGLE_E ; next_command.RETURN_HOME ; next_command.WRITE_CHAR16 ; next_command.WRITE_CHAR15 ; next_command.WRITE_CHAR14 ; next_command.WRITE_CHAR13 ; next_command.WRITE_CHAR12 ; next_command.WRITE_CHAR11 ; next_command.WRITE_CHAR10 ; next_command.WRITE_CHAR9 ; next_command.WRITE_CHAR8 ; next_command.WRITE_CHAR7 ; next_command.WRITE_CHAR6 ; next_command.WRITE_CHAR5 ; next_command.WRITE_CHAR4 ; next_command.WRITE_CHAR3 ; next_command.WRITE_CHAR2 ; next_command.WRITE_CHAR1 ; next_command.MODE_SET ; next_command.DISPLAY_ON ; next_command.FUNC_SET ; next_command.RESET2 ;
-+----------------------------+----------------------------+--------------------------+---------------------+-------------------+---------------------+-----------------------+--------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+-----------------------+-------------------------+-----------------------+---------------------+
-; next_command.RESET2        ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 0                   ;
-; next_command.FUNC_SET      ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 1                     ; 1                   ;
-; next_command.DISPLAY_ON    ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 1                       ; 0                     ; 1                   ;
-; next_command.MODE_SET      ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR1   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR2   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR3   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR4   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR5   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR6   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR7   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR8   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR9   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR10  ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR11  ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR12  ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR13  ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR14  ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR15  ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.WRITE_CHAR16  ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.RETURN_HOME   ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 1                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.TOGGLE_E      ; 0                          ; 0                        ; 0                   ; 0                 ; 0                   ; 1                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.RESET1        ; 0                          ; 0                        ; 0                   ; 0                 ; 1                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.HOLD          ; 0                          ; 0                        ; 0                   ; 1                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.RESET3        ; 0                          ; 0                        ; 1                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.DISPLAY_OFF   ; 0                          ; 1                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-; next_command.DISPLAY_CLEAR ; 1                          ; 0                        ; 0                   ; 0                 ; 0                   ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                     ; 0                       ; 0                     ; 1                   ;
-+----------------------------+----------------------------+--------------------------+---------------------+-------------------+---------------------+-----------------------+--------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+-----------------------+-------------------------+-----------------------+---------------------+
-
-
-Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |acc_project|de2lcd:de2lcd_map|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ;
-+---------------------+---------------------+-------------------+--------------+--------------+------------+----------------+-------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+----------------+------------------+----------------+--------------+
-; Name                ; state.DISPLAY_CLEAR ; state.DISPLAY_OFF ; state.RESET3 ; state.RESET2 ; state.HOLD ; state.TOGGLE_E ; state.RETURN_HOME ; state.WRITE_CHAR16 ; state.WRITE_CHAR15 ; state.WRITE_CHAR14 ; state.WRITE_CHAR13 ; state.WRITE_CHAR12 ; state.WRITE_CHAR11 ; state.WRITE_CHAR10 ; state.WRITE_CHAR9 ; state.WRITE_CHAR8 ; state.WRITE_CHAR7 ; state.WRITE_CHAR6 ; state.WRITE_CHAR5 ; state.WRITE_CHAR4 ; state.WRITE_CHAR3 ; state.WRITE_CHAR2 ; state.WRITE_CHAR1 ; state.MODE_SET ; state.DISPLAY_ON ; state.FUNC_SET ; state.RESET1 ;
-+---------------------+---------------------+-------------------+--------------+--------------+------------+----------------+-------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+----------------+------------------+----------------+--------------+
-; state.RESET1        ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 0            ;
-; state.FUNC_SET      ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 1              ; 1            ;
-; state.DISPLAY_ON    ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 1                ; 0              ; 1            ;
-; state.MODE_SET      ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR1   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR2   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR3   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR4   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR5   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR6   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR7   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR8   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR9   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR10  ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 1                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR11  ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 1                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR12  ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 1                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR13  ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 1                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR14  ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 1                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR15  ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 1                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.WRITE_CHAR16  ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 1                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.RETURN_HOME   ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 1                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.TOGGLE_E      ; 0                   ; 0                 ; 0            ; 0            ; 0          ; 1              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.HOLD          ; 0                   ; 0                 ; 0            ; 0            ; 1          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.RESET2        ; 0                   ; 0                 ; 0            ; 1            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.RESET3        ; 0                   ; 0                 ; 1            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.DISPLAY_OFF   ; 0                   ; 1                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-; state.DISPLAY_CLEAR ; 1                   ; 0                 ; 0            ; 0            ; 0          ; 0              ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0              ; 0                ; 0              ; 1            ;
-+---------------------+---------------------+-------------------+--------------+--------------+------------+----------------+-------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+----------------+------------------+----------------+--------------+
-
-
-Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |acc_project|i2c_master:i2c_master_map|state                                                                                     ;
-+----------------+------------+----------------+----------------+----------+----------+----------------+---------------+-------------+-------------+
-; Name           ; state.stop ; state.mstr_ack ; state.slv_ack2 ; state.rd ; state.wr ; state.slv_ack1 ; state.command ; state.start ; state.ready ;
-+----------------+------------+----------------+----------------+----------+----------+----------------+---------------+-------------+-------------+
-; state.ready    ; 0          ; 0              ; 0              ; 0        ; 0        ; 0              ; 0             ; 0           ; 0           ;
-; state.start    ; 0          ; 0              ; 0              ; 0        ; 0        ; 0              ; 0             ; 1           ; 1           ;
-; state.command  ; 0          ; 0              ; 0              ; 0        ; 0        ; 0              ; 1             ; 0           ; 1           ;
-; state.slv_ack1 ; 0          ; 0              ; 0              ; 0        ; 0        ; 1              ; 0             ; 0           ; 1           ;
-; state.wr       ; 0          ; 0              ; 0              ; 0        ; 1        ; 0              ; 0             ; 0           ; 1           ;
-; state.rd       ; 0          ; 0              ; 0              ; 1        ; 0        ; 0              ; 0             ; 0           ; 1           ;
-; state.slv_ack2 ; 0          ; 0              ; 1              ; 0        ; 0        ; 0              ; 0             ; 0           ; 1           ;
-; state.mstr_ack ; 0          ; 1              ; 0              ; 0        ; 0        ; 0              ; 0             ; 0           ; 1           ;
-; state.stop     ; 1          ; 0              ; 0              ; 0        ; 0        ; 0              ; 0             ; 0           ; 1           ;
-+----------------+------------+----------------+----------------+----------+----------+----------------+---------------+-------------+-------------+
-
-
-+-----------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                            ;
-+--------------------------------------------+--------------------------------------------------+
-; Register name                              ; Reason for Removal                               ;
-+--------------------------------------------+--------------------------------------------------+
-; de2lcd:de2lcd_map|LCD_RW                   ; Stuck at GND due to stuck port data_in           ;
-; i2c_master:i2c_master_map|addr_rw[4,6,7]   ; Merged with i2c_master:i2c_master_map|addr_rw[0] ;
-; i2c_master:i2c_master_map|data_tx[2..5]    ; Merged with i2c_master:i2c_master_map|addr_rw[0] ;
-; i2c_master:i2c_master_map|addr_rw[2,3,5]   ; Merged with i2c_master:i2c_master_map|addr_rw[1] ;
-; i2c_master:i2c_master_map|data_tx[0,1,6,7] ; Merged with i2c_master:i2c_master_map|addr_rw[1] ;
-; i2c_master:i2c_master_map|addr_rw[1]       ; Stuck at GND due to stuck port data_in           ;
-; i2c_master:i2c_master_map|addr_rw[0]       ; Stuck at VCC due to stuck port data_in           ;
-; de2lcd:de2lcd_map|next_command.RESET1      ; Merged with de2lcd:de2lcd_map|next_command.HOLD  ;
-; de2lcd:de2lcd_map|next_command.TOGGLE_E    ; Merged with de2lcd:de2lcd_map|next_command.HOLD  ;
-; de2lcd:de2lcd_map|next_command.WRITE_CHAR2 ; Merged with de2lcd:de2lcd_map|DATA_BUS_VALUE[6]  ;
-; i2c_master:i2c_master_map|state.stop       ; Stuck at GND due to stuck port data_in           ;
-; de2lcd:de2lcd_map|next_command.HOLD        ; Stuck at GND due to stuck port data_in           ;
-; Total Number of Removed Registers = 22     ;                                                  ;
-+--------------------------------------------+--------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 162   ;
-; Number of registers using Synchronous Clear  ; 21    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 30    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 34    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; i2c_master:i2c_master_map|bit_cnt[0]   ; 18      ;
-; i2c_master:i2c_master_map|bit_cnt[2]   ; 17      ;
-; i2c_master:i2c_master_map|bit_cnt[1]   ; 18      ;
-; i2c_master:i2c_master_map|sda_int      ; 3       ;
-; Total number of inverted registers = 4 ;         ;
-+----------------------------------------+---------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |acc_project|de2lcd:de2lcd_map|CLK_COUNT_400HZ[17] ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |acc_project|i2c_master:i2c_master_map|bit_cnt[0]  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-
-
-+------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: i2c_master:i2c_master_map ;
-+----------------+----------+--------------------------------------------+
-; Parameter Name ; Value    ; Type                                       ;
-+----------------+----------+--------------------------------------------+
-; input_clk      ; 50000000 ; Signed Integer                             ;
-; bus_clk        ; 400000   ; Signed Integer                             ;
-+----------------+----------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "i2c_master:i2c_master_map"                                                                   ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; ena           ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; addr[6..5]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; addr[2..0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; addr[4]       ; Input  ; Info     ; Stuck at GND                                                                        ;
-; addr[3]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; rw            ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; data_wr[5..2] ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; data_wr[7..6] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data_wr[1..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; busy          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 19                          ;
-; cycloneiii_ff         ; 162                         ;
-;     CLR               ; 8                           ;
-;     ENA               ; 12                          ;
-;     ENA CLR           ; 22                          ;
-;     SCLR              ; 21                          ;
-;     plain             ; 99                          ;
-; cycloneiii_io_obuf    ; 10                          ;
-; cycloneiii_lcell_comb ; 249                         ;
-;     arith             ; 56                          ;
-;         2 data inputs ; 55                          ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 193                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 71                          ;
-;         3 data inputs ; 24                          ;
-;         4 data inputs ; 89                          ;
-;                       ;                             ;
-; Max LUT depth         ; 10.30                       ;
-; Average LUT depth     ; 3.97                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:02     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -449,52 +164,41 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Fri Apr 22 17:17:36 2016
+    Info: Processing started: Tue Apr 26 16:28:57 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off acc_project -c acc_project
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file i2c/i2c_master.vhd
-    Info (12022): Found design unit 1: i2c_master-logic File: C:/Users/Magz/Desktop/acc/i2c/i2c_master.vhd Line: 54
-    Info (12023): Found entity 1: i2c_master File: C:/Users/Magz/Desktop/acc/i2c/i2c_master.vhd Line: 36
-Info (12021): Found 2 design units, including 1 entities, in source file de2lcd/de2lcd/de2lcd.vhd
-    Info (12022): Found design unit 1: de2lcd-a File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 14
-    Info (12023): Found entity 1: de2lcd File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file acc_project.vhd
-    Info (12022): Found design unit 1: acc_project-mixed File: C:/Users/Magz/Desktop/acc/acc_project.vhd Line: 25
-    Info (12023): Found entity 1: acc_project File: C:/Users/Magz/Desktop/acc/acc_project.vhd Line: 6
-Info (12127): Elaborating entity "acc_project" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at acc_project.vhd(53): object "busy_temp" assigned a value but never read File: C:/Users/Magz/Desktop/acc/acc_project.vhd Line: 53
-Info (12128): Elaborating entity "i2c_master" for hierarchy "i2c_master:i2c_master_map" File: C:/Users/Magz/Desktop/acc/acc_project.vhd Line: 69
-Info (12128): Elaborating entity "de2lcd" for hierarchy "de2lcd:de2lcd_map" File: C:/Users/Magz/Desktop/acc/acc_project.vhd Line: 83
-Warning (10541): VHDL Signal Declaration warning at de2lcd.vhd(9): used implicit default value for signal "SEC_LED" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 9
-Warning (10631): VHDL Process Statement warning at de2lcd.vhd(48): inferring latch(es) for signal or variable "init", which holds its previous value in one or more paths through the process File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 48
-Info (10041): Inferred latch for "init" at de2lcd.vhd(52) File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 52
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Magz/Desktop/acc/i2c/i2c_master.vhd Line: 110
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "de2lcd:de2lcd_map|DATA_BUS[0]~synth" File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 11
-    Warning (13010): Node "de2lcd:de2lcd_map|DATA_BUS[1]~synth" File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 11
-    Warning (13010): Node "de2lcd:de2lcd_map|DATA_BUS[2]~synth" File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 11
-    Warning (13010): Node "de2lcd:de2lcd_map|DATA_BUS[3]~synth" File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 11
-    Warning (13010): Node "de2lcd:de2lcd_map|DATA_BUS[4]~synth" File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 11
-    Warning (13010): Node "de2lcd:de2lcd_map|DATA_BUS[5]~synth" File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 11
-    Warning (13010): Node "de2lcd:de2lcd_map|DATA_BUS[6]~synth" File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 11
-    Warning (13010): Node "de2lcd:de2lcd_map|DATA_BUS[7]~synth" File: C:/Users/Magz/Desktop/acc/de2lcd/de2lcd/de2lcd.vhd Line: 11
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LCD_ON" is stuck at VCC File: C:/Users/Magz/Desktop/acc/acc_project.vhd Line: 12
-    Warning (13410): Pin "SEC_LED" is stuck at GND File: C:/Users/Magz/Desktop/acc/acc_project.vhd Line: 12
-    Warning (13410): Pin "LCD_RW" is stuck at GND File: C:/Users/Magz/Desktop/acc/acc_project.vhd Line: 13
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 290 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 7 output pins
-    Info (21060): Implemented 10 bidirectional pins
-    Info (21061): Implemented 271 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 854 megabytes
-    Info: Processing ended: Fri Apr 22 17:18:03 2016
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:53
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file mpu-6050_english.v
+    Info (12023): Found entity 1: top File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/mpu-6050_english.v Line: 7
+Error (10500): VHDL syntax error at acc_project.vhd(81) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 81
+Error (10500): VHDL syntax error at acc_project.vhd(82) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 82
+Error (10500): VHDL syntax error at acc_project.vhd(85) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 85
+Error (10500): VHDL syntax error at acc_project.vhd(88) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 88
+Error (10500): VHDL syntax error at acc_project.vhd(89) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 89
+Error (10500): VHDL syntax error at acc_project.vhd(90) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 90
+Error (10500): VHDL syntax error at acc_project.vhd(97) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 97
+Error (10500): VHDL syntax error at acc_project.vhd(98) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 98
+Error (10500): VHDL syntax error at acc_project.vhd(101) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 101
+Error (10500): VHDL syntax error at acc_project.vhd(104) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 104
+Error (10500): VHDL syntax error at acc_project.vhd(105) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 105
+Error (10500): VHDL syntax error at acc_project.vhd(106) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 106
+Error (10500): VHDL syntax error at acc_project.vhd(113) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 113
+Error (10500): VHDL syntax error at acc_project.vhd(114) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 114
+Error (10500): VHDL syntax error at acc_project.vhd(117) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 117
+Error (10500): VHDL syntax error at acc_project.vhd(120) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 120
+Error (10500): VHDL syntax error at acc_project.vhd(121) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 121
+Error (10500): VHDL syntax error at acc_project.vhd(122) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 122
+Error (10500): VHDL syntax error at acc_project.vhd(129) near text "=>";  expecting "(", or "'", or "." File: F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/acc_project.vhd Line: 129
+Info (144001): Generated suppressed messages file F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/output_files/acc_project.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 19 errors, 0 warnings
+    Error: Peak virtual memory: 801 megabytes
+    Error: Processing ended: Tue Apr 26 16:29:17 2016
+    Error: Elapsed time: 00:00:20
+    Error: Total CPU time (on all processors): 00:00:39
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/output_files/acc_project.map.smsg.
 
 

@@ -64,7 +64,7 @@
 
 	begin
 
-	Data_Handler : process(clk_50Mhz, addr, rw, data_rd-- parameters used here)
+	Data_Handler : process(clk_50Mhz, addr, rw, data_rd)-- parameters used here)
 
 
 		begin
@@ -131,7 +131,7 @@
 	            		-- I'm not sure if we have to check acknoledge here or busy; before proceeding.
 	            		-- Once we are acknoledged we proceed further.
 	            		data_wr => -- Address of the Y_bot register map!
-	            		--Acknoledge again.
+	            		--Acknowledge again.
 	            		addr => "1101000";
 	            		rw => "1";
 	            		data_rd => receive_data_rd (79 DOWNTO 72);

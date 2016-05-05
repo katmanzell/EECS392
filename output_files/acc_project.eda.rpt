@@ -1,5 +1,5 @@
 EDA Netlist Writer report for acc_project
-Fri Apr 22 17:19:28 2016
+Thu Apr 28 16:53:34 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Apr 22 17:19:28 2016 ;
+; EDA Netlist Writer Status ; Successful - Thu Apr 28 16:53:34 2016 ;
 ; Revision Name             ; acc_project                           ;
 ; Top-level Entity Name     ; acc_project                           ;
 ; Family                    ; Cyclone IV E                          ;
@@ -67,20 +67,20 @@ agreement for further details.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                           ;
-+--------------------------------------------------------------------------------------+
-; Generated Files                                                                      ;
-+--------------------------------------------------------------------------------------+
-; C:/Users/Magz/Desktop/acc/simulation/modelsim/acc_project_7_1200mv_85c_slow.vho      ;
-; C:/Users/Magz/Desktop/acc/simulation/modelsim/acc_project_7_1200mv_0c_slow.vho       ;
-; C:/Users/Magz/Desktop/acc/simulation/modelsim/acc_project_min_1200mv_0c_fast.vho     ;
-; C:/Users/Magz/Desktop/acc/simulation/modelsim/acc_project.vho                        ;
-; C:/Users/Magz/Desktop/acc/simulation/modelsim/acc_project_7_1200mv_85c_vhd_slow.sdo  ;
-; C:/Users/Magz/Desktop/acc/simulation/modelsim/acc_project_7_1200mv_0c_vhd_slow.sdo   ;
-; C:/Users/Magz/Desktop/acc/simulation/modelsim/acc_project_min_1200mv_0c_vhd_fast.sdo ;
-; C:/Users/Magz/Desktop/acc/simulation/modelsim/acc_project_vhd.sdo                    ;
-+--------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                        ;
++---------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                   ;
++---------------------------------------------------------------------------------------------------+
+; C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/acc_project_7_1200mv_85c_slow.vho      ;
+; C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/acc_project_7_1200mv_0c_slow.vho       ;
+; C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/acc_project_min_1200mv_0c_fast.vho     ;
+; C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/acc_project.vho                        ;
+; C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/acc_project_7_1200mv_85c_vhd_slow.sdo  ;
+; C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/acc_project_7_1200mv_0c_vhd_slow.sdo   ;
+; C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/acc_project_min_1200mv_0c_vhd_fast.sdo ;
+; C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/acc_project_vhd.sdo                    ;
++---------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -89,19 +89,19 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Fri Apr 22 17:19:26 2016
+    Info: Processing started: Thu Apr 28 16:53:32 2016
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off acc_project -c acc_project
-Info (204019): Generated file acc_project_7_1200mv_85c_slow.vho in folder "C:/Users/Magz/Desktop/acc/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file acc_project_7_1200mv_0c_slow.vho in folder "C:/Users/Magz/Desktop/acc/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file acc_project_min_1200mv_0c_fast.vho in folder "C:/Users/Magz/Desktop/acc/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file acc_project.vho in folder "C:/Users/Magz/Desktop/acc/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file acc_project_7_1200mv_85c_vhd_slow.sdo in folder "C:/Users/Magz/Desktop/acc/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file acc_project_7_1200mv_0c_vhd_slow.sdo in folder "C:/Users/Magz/Desktop/acc/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file acc_project_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/Magz/Desktop/acc/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file acc_project_vhd.sdo in folder "C:/Users/Magz/Desktop/acc/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file acc_project_7_1200mv_85c_slow.vho in folder "C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file acc_project_7_1200mv_0c_slow.vho in folder "C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file acc_project_min_1200mv_0c_fast.vho in folder "C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file acc_project.vho in folder "C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file acc_project_7_1200mv_85c_vhd_slow.sdo in folder "C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file acc_project_7_1200mv_0c_vhd_slow.sdo in folder "C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file acc_project_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file acc_project_vhd.sdo in folder "C:/Users/Magz/Desktop/EECS 392/EECS392/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 727 megabytes
-    Info: Processing ended: Fri Apr 22 17:19:28 2016
+    Info: Peak virtual memory: 730 megabytes
+    Info: Processing ended: Thu Apr 28 16:53:34 2016
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

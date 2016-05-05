@@ -13,7 +13,7 @@ module MPU (
 	);
 input clk;
 input	rst_n;
-output scl;
+inout scl; //MAGDA changed from output to inout
 output [7: 0] data;
 inout sda;
 
@@ -24,10 +24,10 @@ reg scl_r; // clock pulse generated
 reg [19: 0] cnt_10ms;
 
 always @ (posedge clk or negedge rst_n)
-if (! rst_n)
-	cnt_10ms <= 20'd0;
-else
-cnt_10ms <= cnt_10ms + 1'b1;
+	if (! rst_n)
+		cnt_10ms <= 20'd0;
+	else
+		cnt_10ms <= cnt_10ms + 1'b1;
 
 always @ (posedge clk or negedge rst_n)
 begin
@@ -36,7 +36,7 @@ begin
 	else if (cnt_sum == 9'd499)
 		cnt_sum <= 0;
 	else
-	cnt_sum <= cnt_sum + 1'b1;
+		cnt_sum <= cnt_sum + 1'b1;
 end
 
 always @ (posedge clk or negedge rst_n)
@@ -46,13 +46,13 @@ begin
 	else
 	begin
 		case (cnt_sum)
-9'd124: cnt <= 3'd1; // HIGH
-9'd249: cnt <= 3'd2; // falling
-9'd374: cnt <= 3'd3; // low
-9'd499: cnt <= 3'd0; // rising
-default: cnt <= 3'd5;
-endcase
-end
+			9'd124: cnt <= 3'd1; // HIGH
+			9'd249: cnt <= 3'd2; // falling
+			9'd374: cnt <= 3'd3; // low
+			9'd499: cnt <= 3'd0; // rising
+			default: cnt <= 3'd5;
+		endcase
+	end
 end
 
 `define SCL_POS (cnt == 3'd0)

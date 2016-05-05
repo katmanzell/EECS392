@@ -16,10 +16,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "ack_error",
-					"strict" : false
-				},
-				{
 					"name" : "DATA_BUS[0]",
 					"strict" : false
 				},
@@ -52,11 +48,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "sda",
+					"name" : "scl",
 					"strict" : false
 				},
 				{
-					"name" : "scl",
+					"name" : "sda",
 					"strict" : false
 				},
 				{

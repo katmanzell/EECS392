@@ -1,0 +1,123 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_textio.all;
+use ieee.numeric_std.all;
+use std.textio.all;
+
+entity de2_i2c_controller_tb is
+	port(
+  		CLOCK: in std_logic;
+ 		I2C_SCLK : out std_logic;
+  		I2C_SDAT: inout std_logic;
+  		I2C_DATA: in std_logic_vector (14 downto 0);
+  		GO : in std_logic;
+  		STOP : out std_logic;	
+  		ACK : out std_logic;
+  		RESET : in std_logic;
+  		accel : out std_logic_vector (7 downto 0);
+
+  		-- TEST
+  		SD_COUNTER: out std_logic_vector (5 downto 0);
+  		SDO: out std_logic);
+end entity de2_i2c_controller_tb;
+
+
+architecture behavioral of de2_i2c_controller_tb is
+  
+component de2_i2c_controller is
+	port(
+  		CLOCK: in std_logic;
+ 		I2C_SCLK : out std_logic;
+  		I2C_SDAT: inout std_logic;
+  		I2C_DATA: in std_logic_vector (14 downto 0);
+  		GO : in std_logic;
+  		STOP : out std_logic;	
+  		ACK : out std_logic;
+  		RESET : in std_logic;
+  		accel : out std_logic_vector (7 downto 0);
+
+  		-- TEST
+  		SD_COUNTER: out std_logic_vector (5 downto 0);
+  		SDO: out std_logic);
+end component de2_i2c_controller;
+
+
+	signal clk : std_logic :='0';
+	signal HOLD_CLK: std_logic := '0';
+	constant period : time := 10 ns;
+
+     signal request : std_logic_vector(14 downto 0); 
+     signal sensor_value : std_logic_vector(7 downto 0); 
+
+begin
+
+
+
+  div_map : de2_i2c_controller port map 
+  	(CLOCK => clk,
+ 	I2C_SCLK => I2C_SCLK,
+  	I2C_SDAT => I2C_SDAT,
+  	I2C_DATA => request,
+  	GO => GO,
+  	STOP => STOP,	
+  	ACK => ACK,
+  	RESET => RESET,
+  	accel => sensor_value,
+
+	SD_COUNTER => SD_COUNTER,
+  	SDO => SDO);
+
+ clk_process : process is
+	begin
+		clk <= '0';
+		wait for (period/2);
+		clk <= '1';
+		wait for (period/2);
+		if(HOLD_CLK = '1') then
+			wait;
+		end if;
+end process clk_process;
+
+
+  
+doing_it:  process is
+     variable my_slave_addr : std_logic_vector(6 downto 0); 
+     variable my_reg_addr : std_logic_vector(7 downto 0);
+     variable my_request : std_logic_vector(14 downto 0);
+     variable my_line : line;
+
+     -- Divider 16 --
+     file infile: text open read_mode is "accel.in";
+     file outfile: text open write_mode is "accel.out";
+      
+    begin
+
+      while not (endfile(infile)) loop
+    --   GO <= '1';
+     --  RESET <= '0';
+        
+       readline(infile, my_line);
+       read(my_line, my_request);
+       request <= my_request;
+       --request(14 downto 8) <= my_slave_addr;
+
+       --bread(infile, my_reg_addr);
+       --request(7 downto 0) <= my_reg_addr;
+
+	       wait for (40 * period);	
+	     --  GO <= not GO;
+	     --  wait for (40* period);	
+         
+         write(my_line, sensor_value);
+         writeline (outfile, my_line);
+         
+      end loop;
+	
+      HOLD_CLK <= '1';
+	wait;
+   -- file_close(infile);
+   -- file_close(outfile);
+      
+  end process doing_it;
+
+end architecture behavioral; 

@@ -37,8 +37,8 @@ initial  begin
 end
 
 initial  begin
-	$display("\t\ttime,\tclk,\trst,	  X,	  Y,\tZ,\tBeat,\tIntensity");
-	$monitor("%d,\t%b,\t\t\t%b,\t%d,\t%d,\t%d,\t\t%b,\t%d,",$time,clk,rst,X_save,Y_save,Z_save,beat_en,Level);
+	$display("\t\ttime,\tclk,\trst,\tX,\tY,\tZ,\tBeat,\tIntensity");
+	$monitor("%d,\t%b,\t%b,\t%d,\t%d,\t%d,\t%b,\t%d,",$time,clk,rst,X_save,Y_save,Z_save,beat_en,Level);
 end
 
 initial begin
@@ -66,7 +66,7 @@ X_save = 16'b0000000101110010; // X is level 2
 Y_save = 16'b0000001101000000; // Y is level 3
 Z_save = 16'b0000000010010110; // Z is level 1
 rst = 1'b1; // reset bit is 1
-//#10
-//#50  $finish;
+#10
+#50  $finish;
 end 
 endmodule

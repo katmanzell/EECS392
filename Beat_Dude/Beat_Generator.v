@@ -4,6 +4,8 @@ module Beat_Generator (
 	X_coordinate, //16 bit input from accelerometer
 	Y_coordinate, //16 bit input from accelerometer
 	Z_coordinate, //16 bit input from accelerometer
+	//start,	//	Send a start bit to Magda
+//	ready, // Recieve a bit to process
 	beat_en, // Output if beat detected
 	beat_intensity	 // Output of the beat intensity detected
 );
@@ -26,21 +28,21 @@ parameter	level_3 = 16'b0000000111110100; //Binary 500 - level to compare differ
 
 //------------------------------------------Instantiantion of PIPO-------------------------------------------
 PIPO u0 (
-	.clk (clk),
+	.clk (ready),
 	.rst (rst),
 	.din (X_coordinate),
 	.dout (X_save)
 	);
 
 PIPO u1 (
-	.clk (clk),
+	.clk (ready),
 	.rst (rst),
 	.din (Y_coordinate),
 	.dout (Y_save)
 	);
 
 PIPO u2 (
-	.clk (clk),
+	.clk (ready),
 	.rst (rst),
 	.din (Z_coordinate),
 	.dout (Z_save)
@@ -55,16 +57,23 @@ always @(posedge clk or posedge rst) begin
 	beat_intensity <= 2'b00;		// reset		
 	end
 	else if (X_coordinate - X_save > level_1 && X_coordinate - X_save < level_2  || Y_coordinate - Y_save > level_1 && Y_coordinate - Y_save < level_2 || Z_coordinate - Z_save > level_1 && Z_coordinate - Z_save < level_2) begin
-	beat_en <= 1'b1;
-	beat_intensity <= 2'b01;	
+		beat_en <= 1'b1;
+		#40 beat_en <= 1'b0;
+		beat_intensity <= 2'b01;	
 	end
 	else if (X_coordinate - X_save > level_2 && X_coordinate - X_save < level_3 || Y_coordinate - Y_save > level_2 && Y_coordinate - Y_save < level_3 || Z_coordinate - Z_save > level_2 && Z_coordinate - Z_save < level_3) begin
-	beat_en <= 1'b1;
-	beat_intensity <= 2'b10;	
+		beat_en <= 1'b1;
+		#40 beat_en <= 1'b0;
+		beat_intensity <= 2'b10;	
 	end
 	else if (X_coordinate - X_save > level_3 || Y_coordinate - Y_save > level_3 || Z_coordinate - Z_save > level_3) begin
-	beat_en <= 1'b1;
-	beat_intensity <= 2'b11;	
+		beat_en <= 1'b1;
+		#40 beat_en <= 1'b0;
+		beat_intensity <= 2'b11;	
+	end
+	else begin
+		beat_en <= 1'b0;
+		beat_intensity <= 2'b00;
 	end
 end
 endmodule

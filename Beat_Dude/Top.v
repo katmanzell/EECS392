@@ -17,7 +17,8 @@ module top (
 	GYRO_YH_READ,
 	GYRO_YL_READ,
 	GYRO_ZH_READ,
-	GYRO_ZL_READ
+	GYRO_ZL_READ,
+	flag
 	);
 input clk, rst_n; // Active low reset!
 output scl;
@@ -34,11 +35,13 @@ output [7: 0] GYRO_YH_READ; // Y-axis gyroscope store high eight
 output [7: 0] GYRO_YL_READ; // store the Y-axis gyroscope low eight 
 output [7: 0] GYRO_ZH_READ; // store gyroscope Z-axis high eight 
 output [7: 0] GYRO_ZL_READ; // store gyroscope Z-axis low eight  
+output flag;
 
 reg [2: 0] cnt; // cnt = 0, rising scl; cnt = 1, scl high intermediate; cnt = 2, scl falling; cnt = 3, scl low intermediate 
 reg [8: 0] cnt_sum; // generate the desired clock IIC 
 reg scl_r; // clock pulse generated 
 reg [19: 0] cnt_10ms;
+reg flag;
 
 always @ (posedge clk or negedge rst_n)
 begin
@@ -177,6 +180,7 @@ begin
 		GYRO_ZH_READ <= 8'h00;
 		GYRO_ZL_READ <= 8'h00;
 		times <= 5'b0;
+		flag <= 1'b0;
 	end
 	else
 	case (state)
@@ -405,6 +409,7 @@ begin
 		end
 		else
 			state <= ACK4; // waits for a response 
+			flag <= 1'b1;
 		end
 		STOP1: begin
 		if (`SCL_LOW) // scl low 
@@ -424,8 +429,10 @@ begin
 	STOP2: begin
 		if (`SCL_LOW)
 			sda_r <= 1'b1;
-		else if (cnt_10ms == 20'hffff0) // get a data about 10ms 
+		else if (cnt_10ms == 20'hffff0) begin// get a data about 10ms 
 			state <= IDLE;
+			flag <= 1'b0;
+		end
 		else
 		state <= STOP2;
 	end

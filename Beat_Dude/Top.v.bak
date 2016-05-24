@@ -6,35 +6,53 @@ module top (
 	scl,
 	sda,
 	rst_n,
-	ACC_XH_READ,
-	ACC_XL_READ,
-	ACC_YH_READ,
-	ACC_YL_READ,
-	ACC_ZH_READ,
-	ACC_ZL_READ,
-	GYRO_XH_READ,
-	GYRO_XL_READ,
-	GYRO_YH_READ,
-	GYRO_YL_READ,
-	GYRO_ZH_READ,
-	GYRO_ZL_READ,
+//	ACC_XH_READ,
+//	ACC_XL_READ,
+//	ACC_YH_READ,
+//	ACC_YL_READ,
+//	ACC_ZH_READ,
+//	ACC_ZL_READ,
+//	GYRO_XH_READ,
+//	GYRO_XL_READ,
+//	GYRO_YH_READ,
+//	GYRO_YL_READ,
+//	GYRO_ZH_READ,
+//	GYRO_ZL_READ,
+	X_Accel,
+	Y_Accel,
+	Z_Accel,
+	X_Gyro,
+	Y_Gyro,
+	Z_Gyro,
 	flag
 	);
 input clk, rst_n; // Active low reset!
 output scl;
 inout sda;
-output [7: 0] ACC_XH_READ; // stored acceleration X-axis high eight
-output [7: 0] ACC_XL_READ; // store the low eight X-axis acceleration
-output [7: 0] ACC_YH_READ; // stored acceleration Y-axis high eight 
-output [7: 0] ACC_YL_READ; // stored acceleration Y-axis low eight 
-output [7: 0] ACC_ZH_READ; // stored acceleration Z axis high eight 
-output [7: 0] ACC_ZL_READ ; // store the Z-axis acceleration low eight 
-output [7: 0] GYRO_XH_READ; // store the X-axis gyroscope high eight 
-output [7: 0] GYRO_XL_READ; // store low X-axis gyroscope eight 
-output [7: 0] GYRO_YH_READ; // Y-axis gyroscope store high eight 
-output [7: 0] GYRO_YL_READ; // store the Y-axis gyroscope low eight 
-output [7: 0] GYRO_ZH_READ; // store gyroscope Z-axis high eight 
-output [7: 0] GYRO_ZL_READ; // store gyroscope Z-axis low eight  
+//output [7: 0] ACC_XH_READ; // stored acceleration X-axis high eight
+//output [7: 0] ACC_XL_READ; // store the low eight X-axis acceleration
+//output [7: 0] ACC_YH_READ; // stored acceleration Y-axis high eight 
+//output [7: 0] ACC_YL_READ; // stored acceleration Y-axis low eight 
+//output [7: 0] ACC_ZH_READ; // stored acceleration Z axis high eight 
+//output [7: 0] ACC_ZL_READ ; // store the Z-axis acceleration low eight 
+//output [7: 0] GYRO_XH_READ; // store the X-axis gyroscope high eight 
+//output [7: 0] GYRO_XL_READ; // store low X-axis gyroscope eight 
+//output [7: 0] GYRO_YH_READ; // Y-axis gyroscope store high eight 
+//output [7: 0] GYRO_YL_READ; // store the Y-axis gyroscope low eight 
+//output [7: 0] GYRO_ZH_READ; // store gyroscope Z-axis high eight 
+//output [7: 0] GYRO_ZL_READ; // store gyroscope Z-axis low eight
+output [15:0] X_Accel;
+output [15:0] Y_Accel;
+output [15:0] Z_Accel;
+output [15:0] X_Gyro;
+output [15:0] Y_Gyro;
+output [15:0] Z_Gyro;
+reg signed [15:0] X_Accel;
+reg signed [15:0] Y_Accel;
+reg signed [15:0] Z_Accel;
+reg signed [15:0] X_Gyro;
+reg signed [15:0] Y_Gyro;
+reg signed [15:0] Z_Gyro;  
 output flag;
 
 reg [2: 0] cnt; // cnt = 0, rising scl; cnt = 1, scl high intermediate; cnt = 2, scl falling; cnt = 3, scl low intermediate 
@@ -42,6 +60,26 @@ reg [8: 0] cnt_sum; // generate the desired clock IIC
 reg scl_r; // clock pulse generated 
 reg [19: 0] cnt_10ms;
 reg flag;
+
+always @(posedge clk or negedge rst_n) begin
+	if (~rst_n) begin
+		// reset
+		X_Accel = 16'b0;
+		Y_Accel = 16'b0;
+		Z_Accel = 16'b0;
+		X_Gyro = 16'b0;
+		Y_Gyro = 16'b0;
+		Z_Gyro = 16'b0;	
+	end
+	else begin
+		X_Accel = {ACC_XH_READ,ACC_XL_READ};
+		Y_Accel = {ACC_YH_READ,ACC_YL_READ};
+		Z_Accel = {ACC_ZH_READ,ACC_ZL_READ};
+		X_Gyro = {GYRO_XH_READ,GYRO_XL_READ};
+		Y_Gyro = {GYRO_YH_READ,GYRO_YL_READ};
+		Z_Gyro = {GYRO_ZH_READ,GYRO_ZL_READ};
+	end
+end
 
 always @ (posedge clk or negedge rst_n)
 begin
@@ -361,7 +399,8 @@ begin
 		if (`SCL_NEG)
 		begin
 			state <= DATA;
-			sda_link <= 1'b0; // sda high impedance 
+			sda_link <= 1'b0; // sda high impedance
+			flag <= 1'b1; 
 		end
 		else
 			state <= ACK3; // waits for a response 
@@ -406,10 +445,10 @@ begin
 		begin
 			sda_r <= 1'b1; // pulled sda
 			state <= STOP1;
+			flag <= 1'b0;
 		end
 		else
 			state <= ACK4; // waits for a response 
-			flag <= 1'b1;
 		end
 		STOP1: begin
 		if (`SCL_LOW) // scl low 
@@ -429,9 +468,10 @@ begin
 	STOP2: begin
 		if (`SCL_LOW)
 			sda_r <= 1'b1;
-		else if (cnt_10ms == 20'hffff0) // get a data about 10ms 
+		else if (cnt_10ms == 20'hffff0) begin// get a data about 10ms 
 			state <= IDLE;
 			flag <= 1'b0;
+		end
 		else
 		state <= STOP2;
 	end

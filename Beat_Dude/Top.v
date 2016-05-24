@@ -6,35 +6,60 @@ module top (
 	scl,
 	sda,
 	rst_n,
-	ACC_XH_READ,
-	ACC_XL_READ,
-	ACC_YH_READ,
-	ACC_YL_READ,
-	ACC_ZH_READ,
-	ACC_ZL_READ,
-	GYRO_XH_READ,
-	GYRO_XL_READ,
-	GYRO_YH_READ,
-	GYRO_YL_READ,
-	GYRO_ZH_READ,
-	GYRO_ZL_READ,
+	X_Accel,
+	Y_Accel,
+	Z_Accel,
+	//X_Gyro,
+	//Y_Gyro,
+	//Z_Gyro,
 	flag
 	);
 input clk, rst_n; // Active low reset!
 output scl;
 inout sda;
-output [7: 0] ACC_XH_READ; // stored acceleration X-axis high eight
-output [7: 0] ACC_XL_READ; // store the low eight X-axis acceleration
-output [7: 0] ACC_YH_READ; // stored acceleration Y-axis high eight 
-output [7: 0] ACC_YL_READ; // stored acceleration Y-axis low eight 
-output [7: 0] ACC_ZH_READ; // stored acceleration Z axis high eight 
-output [7: 0] ACC_ZL_READ ; // store the Z-axis acceleration low eight 
-output [7: 0] GYRO_XH_READ; // store the X-axis gyroscope high eight 
-output [7: 0] GYRO_XL_READ; // store low X-axis gyroscope eight 
-output [7: 0] GYRO_YH_READ; // Y-axis gyroscope store high eight 
-output [7: 0] GYRO_YL_READ; // store the Y-axis gyroscope low eight 
-output [7: 0] GYRO_ZH_READ; // store gyroscope Z-axis high eight 
-output [7: 0] GYRO_ZL_READ; // store gyroscope Z-axis low eight  
+//output [7: 0] ACC_XH_READ; // stored acceleration X-axis high eight
+//output [7: 0] ACC_XL_READ; // store the low eight X-axis acceleration
+//output [7: 0] ACC_YH_READ; // stored acceleration Y-axis high eight 
+//output [7: 0] ACC_YL_READ; // stored acceleration Y-axis low eight 
+//output [7: 0] ACC_ZH_READ; // stored acceleration Z axis high eight 
+//output [7: 0] ACC_ZL_READ ; // store the Z-axis acceleration low eight 
+//output [7: 0] GYRO_XH_READ; // store the X-axis gyroscope high eight 
+//output [7: 0] GYRO_XL_READ; // store low X-axis gyroscope eight 
+//output [7: 0] GYRO_YH_READ; // Y-axis gyroscope store high eight 
+//output [7: 0] GYRO_YL_READ; // store the Y-axis gyroscope low eight 
+//output [7: 0] GYRO_ZH_READ; // store gyroscope Z-axis high eight 
+//output [7: 0] GYRO_ZL_READ; // store gyroscope Z-axis low eight
+reg [7: 0] ACC_XH_READ; // stored acceleration X-axis high eight
+reg [7: 0] ACC_XL_READ; // store the low eight X-axis acceleration
+reg [7: 0] ACC_YH_READ; // stored acceleration Y-axis high eight 
+reg [7: 0] ACC_YL_READ; // stored acceleration Y-axis low eight 
+reg [7: 0] ACC_ZH_READ; // stored acceleration Z axis high eight 
+reg [7: 0] ACC_ZL_READ ; // store the Z-axis acceleration low eight 
+reg [7: 0] GYRO_XH_READ; // store the X-axis gyroscope high eight 
+reg [7: 0] GYRO_XL_READ; // store low X-axis gyroscope eight 
+reg [7: 0] GYRO_YH_READ; // Y-axis gyroscope store high eight 
+reg [7: 0] GYRO_YL_READ; // store the Y-axis gyroscope low eight 
+reg [7: 0] GYRO_ZH_READ; // store gyroscope Z-axis high eight 
+reg [7: 0] GYRO_ZL_READ; // store gyroscope Z-axis low eight
+
+output [15:0] X_Accel;
+output [15:0] Y_Accel;
+output [15:0] Z_Accel;
+//output [15:0] X_Gyro;
+//output [15:0] Y_Gyro;
+//output [15:0] Z_Gyro;
+reg signed [15:0] X_Accel;
+reg signed [15:0] Y_Accel;
+reg signed [15:0] Z_Accel;
+//reg signed [15:0] X_Gyro;
+//reg signed [15:0] Y_Gyro;
+//reg signed [15:0] Z_Gyro;
+reg signed [15:0] X_Acc;
+reg signed [15:0] Y_Acc;
+reg signed [15:0] Z_Acc;
+reg signed [15:0] X_Gy;
+reg signed [15:0] Y_Gy;
+reg signed [15:0] Z_Gy;  
 output flag;
 
 reg [2: 0] cnt; // cnt = 0, rising scl; cnt = 1, scl high intermediate; cnt = 2, scl falling; cnt = 3, scl low intermediate 
@@ -42,6 +67,26 @@ reg [8: 0] cnt_sum; // generate the desired clock IIC
 reg scl_r; // clock pulse generated 
 reg [19: 0] cnt_10ms;
 reg flag;
+
+always @(posedge clk or negedge rst_n) begin
+	if (~rst_n) begin
+		// reset
+		X_Acc = 16'b0;
+		Y_Acc = 16'b0;
+		Z_Acc = 16'b0;
+		X_Gy = 16'b0;
+		Y_Gy = 16'b0;
+		Z_Gy = 16'b0;	
+	end
+	else begin
+		X_Acc = {ACC_XH_READ,ACC_XL_READ};
+		Y_Acc = {ACC_YH_READ,ACC_YL_READ};
+		Z_Acc = {ACC_ZH_READ,ACC_ZL_READ};
+		X_Gy = {GYRO_XH_READ,GYRO_XL_READ};
+		Y_Gy = {GYRO_YH_READ,GYRO_YL_READ};
+		Z_Gy = {GYRO_ZH_READ,GYRO_ZL_READ};
+	end
+end
 
 always @ (posedge clk or negedge rst_n)
 begin
@@ -144,18 +189,18 @@ reg sda_link; // sda_link = 1, sda output; sda_link = 0, sda high-impedance stat
 reg [3: 0] num;
 reg [7: 0] db_r;
 
-reg [7: 0] ACC_XH_READ; // stored acceleration X-axis high eight 
-reg [7: 0] ACC_XL_READ; // stored acceleration X-axis low eight 
-reg [7: 0] ACC_YH_READ; // stored acceleration Y-axis higher octave bit 
-reg [7: 0] ACC_YL_READ; // stored acceleration Y-axis low eight 
-reg [7: 0] ACC_ZH_READ; // stored acceleration Z axis high eight 
-reg [7: 0] ACC_ZL_READ; // store low Z-axis acceleration eight 
-reg [7: 0] GYRO_XH_READ; // store the X-axis gyroscope high eight 
-reg [7: 0] GYRO_XL_READ; // store the X-axis gyroscope low eight 
-reg [7: 0] GYRO_YH_READ; // store gyro Y-axis meter high eight 
-reg [7: 0] GYRO_YL_READ; // store the Y-axis gyroscope low eight 
-reg [7: 0] GYRO_ZH_READ; // store gyroscope Z-axis high eight 
-reg [7: 0] GYRO_ZL_READ; // store gyroscope Z-axis low eight 
+// reg [7: 0] ACC_XH_READ; // stored acceleration X-axis high eight 
+// reg [7: 0] ACC_XL_READ; // stored acceleration X-axis low eight 
+// reg [7: 0] ACC_YH_READ; // stored acceleration Y-axis higher octave bit 
+// reg [7: 0] ACC_YL_READ; // stored acceleration Y-axis low eight 
+// reg [7: 0] ACC_ZH_READ; // stored acceleration Z axis high eight 
+// reg [7: 0] ACC_ZL_READ; // store low Z-axis acceleration eight 
+// reg [7: 0] GYRO_XH_READ; // store the X-axis gyroscope high eight 
+// reg [7: 0] GYRO_XL_READ; // store the X-axis gyroscope low eight 
+// reg [7: 0] GYRO_YH_READ; // store gyro Y-axis meter high eight 
+// reg [7: 0] GYRO_YL_READ; // store the Y-axis gyroscope low eight 
+// reg [7: 0] GYRO_ZH_READ; // store gyroscope Z-axis high eight 
+// reg [7: 0] GYRO_ZL_READ; // store gyroscope Z-axis low eight 
 
 reg [4: 0] times; // number of records initial configuration register 
 
@@ -198,6 +243,7 @@ begin
 					sda_link <= 1'b1; // sda output 
 					sda_r <= 1'b0; // low sda, generating start signal 
 					state <= ADD1;
+					flag <= 1'b0;
 				end
 			else
 			state <= START1;
@@ -356,12 +402,12 @@ begin
 		end
 		else 
 			state <= ADD3;
-	end
-	ACK3: begin
+		end
+		ACK3: begin
 		if (`SCL_NEG)
 		begin
 			state <= DATA;
-			sda_link <= 1'b0; // sda high impedance 
+			sda_link <= 1'b0; // sda high impedance
 		end
 		else
 			state <= ACK3; // waits for a response 
@@ -373,6 +419,7 @@ begin
 				if (`SCL_HIG)
 				begin
 					num <= num + 1'b1;
+					//flag <= 1'b0;
 					case (times)
 						5'd6: ACC_XH_READ [4'd7-num] <= sda;
 						5'd7: ACC_XL_READ [4'd7-num] <= sda;
@@ -397,19 +444,19 @@ begin
 			state <= ACK4;
 		end
 		else
-		state <= DATA;
-	end
-	ACK4: begin
+			state <= DATA;
+		end
+		ACK4: begin
 		if (times == 5'd17)
 			times <= 5'd0;
 		if (`SCL_NEG)
 		begin
 			sda_r <= 1'b1; // pulled sda
 			state <= STOP1;
+			//flag <= 1'b0;
 		end
 		else
 			state <= ACK4; // waits for a response 
-			flag <= 1'b1;
 		end
 		STOP1: begin
 		if (`SCL_LOW) // scl low 
@@ -424,21 +471,28 @@ begin
 			state <= STOP2;
 		end
 		else
-		state <= STOP1;
-	end
-	STOP2: begin
+			state <= STOP1;
+		end
+		STOP2: begin
 		if (`SCL_LOW)
 			sda_r <= 1'b1;
 		else if (cnt_10ms == 20'hffff0) begin// get a data about 10ms 
 			state <= IDLE;
-			flag <= 1'b0;
+			X_Accel <= X_Acc;
+			Y_Accel <= Y_Acc;
+			Z_Accel <= Z_Acc;
+			//X_Gyro <= X_Gy;
+			//Y_Gyro <= Y_Gy;
+			//Z_Gyro <= Z_Gy;
+			flag <= 1'b1;
 		end
-		else
-		state <= STOP2;
+		else begin
+			state <= STOP2;
+		end
 	end
 	default: state <= IDLE;
-endcase
+	endcase
+
 end
 assign sda = sda_link ? sda_r: 1'bz;
-
 endmodule 

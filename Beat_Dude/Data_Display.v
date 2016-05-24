@@ -57,6 +57,18 @@ parameter LUT_SIZE = LCD_LINE1+32+1;
 wire [3:0] X_bcd0,X_bcd1,X_bcd2,X_bcd3,X_bcd4,Y_bcd0,Y_bcd1,Y_bcd2,Y_bcd3,Y_bcd4,Z_bcd0,Z_bcd1,Z_bcd2,Z_bcd3,Z_bcd4;
 wire [3:0] XG_bcd0,XG_bcd1,XG_bcd2,XG_bcd3,XG_bcd4,YG_bcd0,YG_bcd1,YG_bcd2,YG_bcd3,YG_bcd4,ZG_bcd0,ZG_bcd1,ZG_bcd2,ZG_bcd3,ZG_bcd4;
 
+reg [19: 0] cnt_10ms;
+
+always @ (posedge clk or negedge rst_n)
+begin
+	if (! rst_n) 
+		cnt_10ms <= 20'd0;
+	else
+	cnt_10ms <= cnt_10ms + 1'b1;
+end 
+
+
+
 always @(posedge clk or negedge rst_n) begin // Convert all 8 bit into 16 bit combinations
 	if (~rst_n) begin // reset
 		X_Accel = 16'b0;
@@ -66,8 +78,9 @@ always @(posedge clk or negedge rst_n) begin // Convert all 8 bit into 16 bit co
 		Y_Gyro = 16'b0;
 		Z_Gyro = 16'b0;	
 	end
-	else if (ACC_XH_READ > 8'b0 || ACC_XL_READ > 8'b0|| ACC_YH_READ > 8'b0 || ACC_YL_READ > 8'b0 || ACC_ZH_READ > 8'b0 || ACC_ZL_READ > 8'b0 || GYRO_XH_READ > 8'b0 || GYRO_XL_READ > 8'b0 || GYRO_YH_READ > 8'b0 || GYRO_YL_READ > 8'b0 || GYRO_ZH_READ > 8'b0 || GYRO_ZL_READ > 8'b0 ) 
-	begin
+	else if (cnt_10ms >= 20'hffff0 && cnt_10ms <= 20'hfffff) begin
+		if (ACC_XH_READ > 8'b0 || ACC_XL_READ > 8'b0|| ACC_YH_READ > 8'b0 || ACC_YL_READ > 8'b0 || ACC_ZH_READ > 8'b0 || ACC_ZL_READ > 8'b0 || GYRO_XH_READ > 8'b0 || GYRO_XL_READ > 8'b0 || GYRO_YH_READ > 8'b0 || GYRO_YL_READ > 8'b0 || GYRO_ZH_READ > 8'b0 || GYRO_ZL_READ > 8'b0 ) 
+		begin
 		X_Accel = {ACC_XH_READ,ACC_XL_READ};
 		Y_Accel = {ACC_YH_READ,ACC_YL_READ};
 		Z_Accel = {ACC_ZH_READ,ACC_ZL_READ};

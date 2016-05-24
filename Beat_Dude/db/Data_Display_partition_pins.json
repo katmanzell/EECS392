@@ -4,203 +4,19 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "beat",
+					"strict" : false
+				},
+				{
+					"name" : "beat_int[0]",
+					"strict" : false
+				},
+				{
+					"name" : "beat_int[1]",
+					"strict" : false
+				},
+				{
 					"name" : "scl",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[0]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[1]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[2]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[3]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[4]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[5]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[6]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[7]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[8]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[9]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[10]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[11]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[12]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[13]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[14]",
-					"strict" : false
-				},
-				{
-					"name" : "X_Accel[15]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[3]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[4]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[5]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[6]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[7]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[8]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[9]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[10]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[11]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[12]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[13]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[14]",
-					"strict" : false
-				},
-				{
-					"name" : "Y_Accel[15]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[3]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[4]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[5]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[6]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[7]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[8]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[9]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[10]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[11]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[12]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[13]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[14]",
-					"strict" : false
-				},
-				{
-					"name" : "Z_Accel[15]",
-					"strict" : false
-				},
-				{
-					"name" : "flag",
 					"strict" : false
 				},
 				{
@@ -208,11 +24,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "rst_n",
 					"strict" : false
 				},
 				{
-					"name" : "rst_n",
+					"name" : "clk",
 					"strict" : false
 				},
 				{

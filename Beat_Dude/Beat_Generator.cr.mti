@@ -1,4 +1,18 @@
-{C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_controller.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_controller.v}
+{C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Sound_Connect.v} {1 {vlog -work work -stats=none {C:\Users\Sarthak Dubey\iCloudDrive\Grad Files\Quarter 3\VLSI System Design\FPGA-DRUMS\EECS392\Beat_Dude\Sound_Connect.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module Sound_Connect
+
+Top level modules:
+	Sound_Connect
+
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Beat_Generator.v} {1 {vlog -work work -stats=none {C:\Users\Sarthak Dubey\iCloudDrive\Grad Files\Quarter 3\VLSI System Design\FPGA-DRUMS\EECS392\Beat_Dude\Beat_Generator.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module Beat_Generator
+
+Top level modules:
+	Beat_Generator
+
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_controller.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_controller.v}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module LCD_Controller
 
@@ -51,6 +65,13 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	LCD_TEST
 
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Top.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Top.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module top
+
+Top level modules:
+	top
+
 } {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcdlab1.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcdlab1.v}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module lcdlab1
@@ -67,12 +88,5 @@ Top level modules:
 
 } {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/macros.vh} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/macros.vh}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-
-} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/one_hertz.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/one_hertz.v}
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module one_hertz
-
-Top level modules:
-	one_hertz
 
 } {} {}}

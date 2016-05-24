@@ -20,9 +20,9 @@ wire [15:0] Z_save; //Wire to send one instance of Z_coordinate data recieved at
 reg [1:0] beat_intensity;
 reg beat_en;
 //--------------------------------------------------------------------------------------------------------
-parameter	level_1 = 16'b0000000001100100; //Binary 100 - level to compare difference.
-parameter	level_2 = 16'b0000000100101100; //Binary 300 - level to compare difference.
-parameter	level_3 = 16'b0000000111110100; //Binary 500 - level to compare difference.
+parameter	level_1 = 16'd3000; // 1000 - level to compare difference.
+parameter	level_2 = 16'd4500; //Binary 30 - level to compare difference.
+parameter	level_3 = 16'd6500; //Binary 50 - level to compare difference.
 
 
 //------------------------------------------Instantiantion of PIPO-------------------------------------------
@@ -48,35 +48,38 @@ PIPO u2 (
 	);
 //------------------------------------------------Always block for subtraction logic-------------------------
 always @(posedge clk or negedge rst) begin
-	if (~rst) begin
-//	X_save <= 16'bZ;
-//	Y_save <= 16'bZ;
-//	Z_save <= 16'bZ;
-	beat_en <= 1'b0;
-	beat_intensity <= 2'b00;		// reset		
-end
-else begin
+	if (! rst) begin
+		beat_en <= 1'b0;
+		beat_intensity <= 2'b00;		// reset		
+	end
 	/* code */
-	if (X_coordinate - X_save > level_1 && X_coordinate - X_save < level_2  || Y_coordinate - Y_save > level_1 && Y_coordinate - Y_save < level_2 || Z_coordinate - Z_save > level_1 && Z_coordinate - Z_save < level_2) begin
-		beat_en <= 1'b1;
-		//#40 beat_en <= 1'b0;
-		beat_intensity <= 2'b01;	
+	else if(X_coordinate > 16'd0 && Y_coordinate > 16'd0 && Z_coordinate > 16'd0) begin
+		/* code */
+	
+		if (X_coordinate - X_save > level_3 || Y_coordinate - Y_save > level_3 || Z_coordinate - Z_save > level_3) begin
+			beat_en <= 1'b1;
+			//#40 beat_en <= 1'b0;
+			beat_intensity <= 2'b11;	
+		end
+		else if (X_coordinate - X_save > level_2 && X_coordinate - X_save <= level_3 || Y_coordinate - Y_save > level_2 && Y_coordinate - Y_save <= level_3 || Z_coordinate - Z_save > level_2 && Z_coordinate - Z_save <= level_3) begin
+			beat_en <= 1'b1;
+			//#40 beat_en <= 1'b0;
+			beat_intensity <= 2'b10;	
+		end
+		else if (X_coordinate - X_save > level_1 && X_coordinate - X_save <= level_2  || Y_coordinate - Y_save > level_1 && Y_coordinate - Y_save <= level_2 || Z_coordinate - Z_save > level_1 && Z_coordinate - Z_save <= level_2) begin
+			beat_en <= 1'b1;
+			//#40 beat_en <= 1'b0;
+			beat_intensity <= 2'b01;	
+		end
+		else begin
+			beat_en <= 1'b0;
+			beat_intensity <= 2'b00;
+		end
 	end
-	else if (X_coordinate - X_save > level_2 && X_coordinate - X_save < level_3 || Y_coordinate - Y_save > level_2 && Y_coordinate - Y_save < level_3 || Z_coordinate - Z_save > level_2 && Z_coordinate - Z_save < level_3) begin
-		beat_en <= 1'b1;
-		//#40 beat_en <= 1'b0;
-		beat_intensity <= 2'b10;	
-	end
-	else if (X_coordinate - X_save > level_3 || Y_coordinate - Y_save > level_3 || Z_coordinate - Z_save > level_3) begin
-		beat_en <= 1'b1;
-		//#40 beat_en <= 1'b0;
-		beat_intensity <= 2'b11;	
-	end
+	
 	else begin
 		beat_en <= 1'b0;
 		beat_intensity <= 2'b00;
 	end
-end
-
 end
 endmodule

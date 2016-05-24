@@ -1,6 +1,6 @@
 module Beat_Generator (
 	clk,    // Clock
-	enable,
+	//enable,
 	rst,  // Asynchronous reset active low
 	X_coordinate, //16 bit input from accelerometer
 	Y_coordinate, //16 bit input from accelerometer
@@ -8,7 +8,7 @@ module Beat_Generator (
 	beat_en, // Output if beat detected
 	beat_intensity	 // Output of the beat intensity detected
 	);
-input clk, enable, rst;    // Clock, Asynchronous reset active low
+input clk, rst;    // Clock, Asynchronous reset active low
 input [15:0] X_coordinate, Y_coordinate, Z_coordinate;//16 bit input from accelerometer
 output beat_en; // Output if beat detected
 output [1:0] beat_intensity;	 // Output of the beat intensity detected
@@ -52,10 +52,10 @@ always @(posedge clk or negedge rst) begin
 //	X_save <= 16'bZ;
 //	Y_save <= 16'bZ;
 //	Z_save <= 16'bZ;
-beat_en <= 1'b0;
+	beat_en <= 1'b0;
 	beat_intensity <= 2'b00;		// reset		
 end
-else if (enable) begin
+else begin
 	/* code */
 	if (X_coordinate - X_save > level_1 && X_coordinate - X_save < level_2  || Y_coordinate - Y_save > level_1 && Y_coordinate - Y_save < level_2 || Z_coordinate - Z_save > level_1 && Z_coordinate - Z_save < level_2) begin
 		beat_en <= 1'b1;

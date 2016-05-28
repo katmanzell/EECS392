@@ -15,17 +15,17 @@ output [1:0] beat_intensity;	 // Output of the beat intensity detected
 reg [1:0] beat_intensity;
 reg beat_en;
 //--------------------------------------------------------------------------------------------------------//
-
+reg reset_not;
 reg ready_read, ready_read_avg;
 wire [15:0] X_save;
 wire [15:0] Y_save;
 wire [15:0] Z_save;
-wire [15:0] X_sum;
-wire [15:0] Y_sum;
-wire [15:0] Z_sum;
-wire [15:0] X_sum_new;
-wire [15:0] Y_sum_new;
-wire [15:0] Z_sum_new;
+reg signed [15:0] X_sum;
+reg signed [15:0] Y_sum;
+reg signed [15:0] Z_sum;
+reg signed [15:0] X_sum_new;
+reg signed [15:0] Y_sum_new;
+reg signed [15:0] Z_sum_new;
 reg [7:0] count_fifo_length;
 reg [7:0] count_fifo_length2;
 parameter fifo_length = 8'd100;
@@ -43,21 +43,21 @@ reg signed [31:0] avgX_diff;
 reg signed [31:0] avgY_diff;
 reg signed [31:0] avgZ_diff;
 
-wire [31:0] avgX_new;
-wire [31:0] avgY_new;
-wire [31:0] avgZ_new;
+reg signed [31:0] avgX_new;
+reg signed [31:0] avgY_new;
+reg signed [31:0] avgZ_new;
 
 wire signed [31:0] avgXsave;
 wire signed [31:0] avgYsave;
 wire signed [31:0] avgZsave;
 
 
-fifo u0(
-	.FIFO_DATA_WIDTH(16),
-	.FIFO_BUFFER_SIZE(101),
+fifo #(16, 101) u0(
+//	.FIFO_DATA_WIDTH(16),
+//	.FIFO_BUFFER_SIZE(101),
 	.rd_clk(clk),
 	.wr_clk(clk),
-	.reset(not rst),
+	.reset(reset_not),
 	.rd_en(ready_read),
 	.wr_en(1'b1),
 	.din(X_coordinate),
@@ -66,12 +66,12 @@ fifo u0(
 	.empty(emptyX)
 );
 
-fifo u1(
-	.FIFO_DATA_WIDTH(16),
-	.FIFO_BUFFER_SIZE(101),
+fifo #(16, 101) u1(
+//	.FIFO_DATA_WIDTH(16),
+//	.FIFO_BUFFER_SIZE(101),
 	.rd_clk(clk),
 	.wr_clk(clk),
-	.reset(not rst),
+	.reset(reset_not),
 	.rd_en(ready_read),
 	.wr_en(1'b1),
 	.din(Y_coordinate),
@@ -79,12 +79,12 @@ fifo u1(
 	.full(fullY),
 	.empty(emptyY)
 );
-fifo u2(
-	.FIFO_DATA_WIDTH(16),
-	.FIFO_BUFFER_SIZE(101),
+fifo #(16, 101) u2(
+//	.FIFO_DATA_WIDTH(16),
+//	.FIFO_BUFFER_SIZE(101),
 	.rd_clk(clk),
 	.wr_clk(clk),
-	.reset(not rst),
+	.reset(reset_not),
 	.rd_en(ready_read),
 	.wr_en(1'b1),
 	.din(Z_coordinate),
@@ -93,12 +93,12 @@ fifo u2(
 	.empty(emptyZ)
 );
 
-fifo u3(
-	.FIFO_DATA_WIDTH(16),
-	.FIFO_BUFFER_SIZE(41),
+fifo #(16, 41) u3(
+//	.FIFO_DATA_WIDTH(16),
+//	.FIFO_BUFFER_SIZE(41),
 	.rd_clk(clk),
 	.wr_clk(clk),
-	.reset(not rst),
+	.reset(reset_not),
 	.rd_en(ready_read_avg),
 	.wr_en(1'b1),
 	.din(avgX),
@@ -107,12 +107,12 @@ fifo u3(
 	.empty(empty)
 );
 
-fifo u4(
-	.FIFO_DATA_WIDTH(16),
-	.FIFO_BUFFER_SIZE(41),
+fifo #(16, 41) u4(
+//	.FIFO_DATA_WIDTH(16),
+//	.FIFO_BUFFER_SIZE(41),
 	.rd_clk(clk),
 	.wr_clk(clk),
-	.reset(not rst),
+	.reset(reset_not),
 	.rd_en(ready_read_avg),
 	.wr_en(1'b1),
 	.din(avgY),
@@ -121,12 +121,12 @@ fifo u4(
 	.empty(empty)
 );
 
-fifo u5(
-	.FIFO_DATA_WIDTH(16),
-	.FIFO_BUFFER_SIZE(41),
+fifo #(16, 41) u5(
+//	.FIFO_DATA_WIDTH(16),
+//	.FIFO_BUFFER_SIZE(41),
 	.rd_clk(clk),
 	.wr_clk(clk),
-	.reset(not rst),
+	.reset(reset_not),
 	.rd_en(ready_read_avg),
 	.wr_en(1'b1),
 	.din(avgZ),
@@ -142,9 +142,9 @@ always @(posedge clk or negedge rst) begin
 	end
 	else if (count_fifo_length > 8'd0) begin
 		count_fifo_length <= count_fifo_length - 8'd1;
-		X_sum = X_coordinate;
-		Y_sum = Y_coordinate;
-		Z_sum = Z_coordinate;
+		X_sum <= X_coordinate;
+		Y_sum <= Y_coordinate;
+		Z_sum <= Z_coordinate;
 		sumX = sumX + {16'd0,X_sum};
 		sumY = sumY + {16'd0,Y_sum};
 		sumZ = sumZ + {16'd0,Z_sum};
@@ -152,18 +152,18 @@ always @(posedge clk or negedge rst) begin
 	end
 	else if (count_fifo_length == 8'd0 && fullX != 1'b1 && emptyX == 1'b0 && fullY != 1'b1 && emptyY == 1'b0 && fullZ != 1'b1 && emptyZ == 1'b0) begin
 		ready_read <= 1'b1;
-		X_sum_new = X_coordinate;
-		Y_sum_new = Y_coordinate;
-		Z_sum_new = Z_coordinate;
+		X_sum_new <= X_coordinate;
+		Y_sum_new <= Y_coordinate;
+		Z_sum_new <= Z_coordinate;
 		sumX = sumX - X_save + X_sum_new;
 		sumY = sumY - Y_save + Y_sum_new;
 		sumZ = sumZ - Z_save + Z_sum_new;
 		avgX <= sumX / 32'd100;
 		avgY <= sumY / 32'd100;
 		avgZ <= sumZ / 32'd100;
-		avgX_new = avgX;
-		avgY_new = avgY;
-		avgZ_new = avgZ;
+		avgX_new <= avgX;
+		avgY_new <= avgY;
+		avgZ_new <= avgZ;
 	end
 	else begin
 	end
@@ -228,5 +228,7 @@ always @(posedge clk or negedge rst) begin
 	else begin
 	end
 end
-
+always @(posedge clk) begin
+	reset_not <= ~rst;
+end
 endmodule

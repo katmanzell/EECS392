@@ -18,6 +18,12 @@ reg ready_read, ready_read_avg;
 wire [15:0] X_save;
 wire [15:0] Y_save;
 wire [15:0] Z_save;
+wire [15:0] X_sum;
+wire [15:0] Y_sum;
+wire [15:0] Z_sum;
+wire [15:0] X_sum_new;
+wire [15:0] Y_sum_new;
+wire [15:0] Z_sum_new;
 reg [7:0] count_fifo_length;
 reg [7:0] count_fifo_length2;
 parameter fifo_length = 8'd100;
@@ -30,6 +36,10 @@ reg signed sumZ [31:0];
 reg signed avgX [31:0];
 reg signed avgY [31:0];
 reg signed avgZ [31:0];
+
+wire avgX_new [31:0];
+wire avgY_new [31:0];
+wire avgZ_new [31:0];
 
 wire signed avgXsave [31:0];
 wire signed avgYsave [31:0];
@@ -126,19 +136,28 @@ always @(posedge clk or negedge rst) begin
 	end
 	else if (count_fifo_length > 8'd0) begin
 		count_fifo_length <= count_fifo_length - 8'd1;
-		sumX = sumX + {16'd0,X_coordinate};
-		sumY = sumY + {16'd0,Y_coordinate};
-		sumZ = sumZ + {16'd0,Z_coordinate};
+		X_sum = X_coordinate;
+		Y_sum = Y_coordinate;
+		Z_sum = Z_coordinate;
+		sumX = sumX + {16'd0,X_sum};
+		sumY = sumY + {16'd0,Y_sum};
+		sumZ = sumZ + {16'd0,Z_sum};
 		ready_read <= 1'b0;
 	end
 	else if (count_fifo_length == 8'd0 && fullX != 1'b1 && emptyX == 1'b0 && fullY != 1'b1 && emptyY == 1'b0 && fullZ != 1'b1 && emptyZ == 1'b0) begin
 		ready_read <= 1'b1;
-		sumX = sumX - X_save + X_coordinate;
-		sumY = sumY - Y_save + Y_coordinate;
-		sumZ = sumZ - Z_save + Z_coordinate;
+		X_sum_new = X_coordinate;
+		Y_sum_new = Y_coordinate;
+		Z_sum_new = Z_coordinate;
+		sumX = sumX - X_save + X_sum_new
+		sumY = sumY - Y_save + Y_sum_new;
+		sumZ = sumZ - Z_save + Z_sum_new;
 		avgX <= sumX / 32'd100;
 		avgY <= sumY / 32'd100;
 		avgZ <= sumZ / 32'd100;
+		avgX_new = avgX;
+		avgY_new = avgY;
+		avgZ_new = avgZ;
 	end
 	else begin
 	end
@@ -156,39 +175,39 @@ always @(posedge clk or negedge rst) begin
 	else if (count_fifo_length2 == 8'd0) begin
 		ready_read_avg <= 1'b1;
 
-		if (avgX - avgXsave >= ((32'd20 * avgX)/32'd100)) begin // Greater than 20% of average.
+		if (avgX_new - avgXsave >= ((32'd20 * avgX_new)/32'd100)) begin // Greater than 20% of average.
 			beat_en <= 1'b1;
 			beat_intensity <= 2'b01;
 		end
-		else if (avgX - avgXsave >= ((32'd40 * avgX)/32'd100)) begin // Greater than 20% of average.
+		else if (avgX_new - avgXsave >= ((32'd40 * avgX_new)/32'd100)) begin // Greater than 20% of average.
 			beat_en <= 1'b1;
 			beat_intensity <= 2'b10;
 		end	
-		else if (avgX - avgXsave >= ((32'd50 * avgX)/32'd100)) begin // Greater than 20% of average.
+		else if (avgX_new - avgXsave >= ((32'd50 * avgX_new)/32'd100)) begin // Greater than 20% of average.
 			beat_en <= 1'b1;
 			beat_intensity <= 2'b11;
 		end
-		else if (avgY - avgYsave >= ((32'd20 * avgY)/32'd100)) begin // Greater than 20% of average.
+		else if (avgY_new - avgYsave >= ((32'd20 * avgY_new)/32'd100)) begin // Greater than 20% of average.
 			beat_en <= 1'b1;
 			beat_intensity <= 2'b01;
 		end
-		else if (avgY - avgYsave >= ((32'd40 * avgY)/32'd100)) begin // Greater than 20% of average.
+		else if (avgY_new - avgYsave >= ((32'd40 * avgY_new)/32'd100)) begin // Greater than 20% of average.
 			beat_en <= 1'b1;
 			beat_intensity <= 2'b10;
 		end	
-		else if (avgY - avgYsave >= ((32'd50 * avgY)/32'd100)) begin // Greater than 20% of average.
+		else if (avgY_new - avgYsave >= ((32'd50 * avgY_new)/32'd100)) begin // Greater than 20% of average.
 			beat_en <= 1'b1;
 			beat_intensity <= 2'b11;
 		end	
-		else if (avgZ - avgZsave >= ((32'd20 * avgZ)/32'd100)) begin // Greater than 20% of average.
+		else if (avgZ_new - avgZsave >= ((32'd20 * avgZ_new)/32'd100)) begin // Greater than 20% of average.
 			beat_en <= 1'b1;
 			beat_intensity <= 2'b01;
 		end
-		else if (avgZ - avgZsave >= ((32'd40 * avgZ)/32'd100)) begin // Greater than 20% of average.
+		else if (avgZ_new - avgZsave >= ((32'd40 * avgZ_new)/32'd100)) begin // Greater than 20% of average.
 			beat_en <= 1'b1;
 			beat_intensity <= 2'b10;
 		end	
-		else if (avgZ - avgZsave >= ((32'd50 * avgZ)/32'd100)) begin // Greater than 20% of average.
+		else if (avgZ_new - avgZsave >= ((32'd50 * avgZ_new)/32'd100)) begin // Greater than 20% of average.
 			beat_en <= 1'b1;
 			beat_intensity <= 2'b11;
 		end

@@ -1,70 +1,143 @@
 module Beat_Generator (
 	clk,    // Clock
+	//enable,
 	rst,  // Asynchronous reset active low
 	X_coordinate, //16 bit input from accelerometer
 	Y_coordinate, //16 bit input from accelerometer
 	Z_coordinate, //16 bit input from accelerometer
 	beat_en, // Output if beat detected
 	beat_intensity	 // Output of the beat intensity detected
-);
+	);
 input clk, rst;    // Clock, Asynchronous reset active low
 input [15:0] X_coordinate, Y_coordinate, Z_coordinate;//16 bit input from accelerometer
 output beat_en; // Output if beat detected
 output [1:0] beat_intensity;	 // Output of the beat intensity detected
-//--------------------------------------------------------------------------------------------------------
-wire [15:0] X_save; //Wire to send one instance of X_coordinate data recieved at clk
-wire [15:0] Y_save; //Wire to send one instance of Y_coordinate data recieved at clk
-wire [15:0] Z_save; //Wire to send one instance of Z_coordinate data recieved at clk
-//parameter [15:0] level_1, level_2, level_3;
 reg [1:0] beat_intensity;
 reg beat_en;
-//--------------------------------------------------------------------------------------------------------
-parameter	level_1 = 16'b0000000001100100; //Binary 100 - level to compare difference.
-parameter	level_2 = 16'b0000000100101100; //Binary 300 - level to compare difference.
-parameter	level_3 = 16'b0000000111110100; //Binary 500 - level to compare difference.
+reg [7:0] count_length;
+parameter delay_length = 8'd5;
+parameter level1 = 16'd20000;
+parameter level2 = 16'd25000;
+parameter level3 = 16'd30000;
+reg signed [15:0] Xsave, Ysave, Zsave;
 
-
-//------------------------------------------Instantiantion of PIPO-------------------------------------------
-PIPO u0 (
-	.clk (clk),
-	.rst (rst),
-	.din (X_coordinate),
-	.dout (X_save)
-	);
-
-PIPO u1 (
-	.clk (clk),
-	.rst (rst),
-	.din (Y_coordinate),
-	.dout (Y_save)
-	);
-
-PIPO u2 (
-	.clk (clk),
-	.rst (rst),
-	.din (Z_coordinate),
-	.dout (Z_save)
-	);
-//------------------------------------------------Always block for subtraction logic-------------------------
-always @(posedge clk or posedge rst) begin
-	if (rst) begin
-//	X_save <= 16'bZ;
-//	Y_save <= 16'bZ;
-//	Z_save <= 16'bZ;
-	beat_en <= 1'b0;
-	beat_intensity <= 2'b00;		// reset		
+//--------------------------------------------------------------------------------------------------------//
+always @(posedge clk or negedge rst) begin
+	if (! rst) begin
+		// reset
+		count_length <= delay_length;
+		beat_en <= 1'b0;
+		beat_intensity <= 2'b00;
 	end
-	else if (X_coordinate - X_save > level_1 && X_coordinate - X_save < level_2  || Y_coordinate - Y_save > level_1 && Y_coordinate - Y_save < level_2 || Z_coordinate - Z_save > level_1 && Z_coordinate - Z_save < level_2) begin
-	beat_en <= 1'b1;
-	beat_intensity <= 2'b01;	
+	else if (count_length > 8'd0) begin
+		count_length <= count_length - 8'd1;
+		beat_en <= 1'b0;
+		beat_intensity <= 2'b00;
 	end
-	else if (X_coordinate - X_save > level_2 && X_coordinate - X_save < level_3 || Y_coordinate - Y_save > level_2 && Y_coordinate - Y_save < level_3 || Z_coordinate - Z_save > level_2 && Z_coordinate - Z_save < level_3) begin
-	beat_en <= 1'b1;
-	beat_intensity <= 2'b10;	
+	else if (count_length == 8'd0) begin
+		if (Xsave >= level1 && Xsave < level2) begin // Greater than 20% of average.
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b01;
+			count_length <= delay_length;
+		end
+		if (Xsave <= -level1 && Xsave > -level2) begin
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b01;
+			count_length <= delay_length;
+		end
+		if (Xsave >= level2 && Xsave < level3) begin // Greater than 20% of average.
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b10;
+			count_length <= delay_length;
+		end	
+		if (Xsave <= -level2 && Xsave > -level3) begin
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b10;
+			count_length <= delay_length;
+		end
+		if (Xsave >= level3) begin // Greater than 20% of average.
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b11;
+			count_length <= delay_length;
+		end
+		if (Xsave <= -level3) begin
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b11;
+			count_length <= delay_length;
+		end
+		if (Ysave >= level1 && Ysave < level2) begin // Greater than 20% of average.
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b01;
+			count_length <= delay_length;
+		end
+		if (Ysave <= -level1 && Ysave > -level2) begin
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b01;
+			count_length <= delay_length;
+		end
+		if (Ysave >= level2 && Ysave < level3) begin // Greater than 20% of average.
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b10;
+			count_length <= delay_length;
+		end	
+		if (Ysave <= -level2 && Ysave > -level3) begin
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b10;
+			count_length <= delay_length;
+		end
+		if (Ysave >= level3) begin // Greater than 20% of average.
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b11;
+			count_length <= delay_length;
+		end
+		if (Ysave <= -level3) begin
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b11;
+			count_length <= delay_length;	
+			end	
+		if (Zsave >= level1 && Zsave < level2) begin // Greater than 20% of average.
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b01;
+			count_length <= delay_length;
+		end
+		if (Zsave <= -level1 && Zsave > -level2) begin
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b01;
+			count_length <= delay_length;
+		end
+		if (Zsave >= level2 && Zsave < level3) begin // Greater than 20% of average.
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b10;
+			count_length <= delay_length;
+		end	
+		if (Zsave <= -level2 && Zsave > -level3) begin
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b10;
+			count_length <= delay_length;
+		end
+		if (Zsave >= level3) begin // Greater than 20% of average.
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b11;
+			count_length <= delay_length;
+		end
+		if (Zsave <= -level3) begin
+			beat_en <= 1'b1;
+			beat_intensity <= 2'b11;
+			count_length <= delay_length;
+		end
+		else begin
+			beat_en <= 1'b0;
+			beat_intensity <= 2'b00;
+		end
 	end
-	else if (X_coordinate - X_save > level_3 || Y_coordinate - Y_save > level_3 || Z_coordinate - Z_save > level_3) begin
-	beat_en <= 1'b1;
-	beat_intensity <= 2'b11;	
+	else begin
 	end
 end
+
+always @(posedge clk) begin
+		Xsave <= X_coordinate;
+		Ysave <= Y_coordinate;
+		Zsave <= Z_coordinate;
+end
+
 endmodule

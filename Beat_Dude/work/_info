@@ -1,0 +1,516 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Modeltech_pe_edu_10.4a/examples
+vadd3
+!i10b 1
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!s100 lKmJmJWQ]W@[N57a9LD4@1
+IT1gQTg0R97<cTTW?>DVQK3
+Z1 dC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude
+Z2 w1462767479
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/add3.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/add3.v
+L0 2
+Z3 OP;L;10.4a;61
+Z4 !s108 1462772241.000000
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/add3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/add3.v|
+!s101 -O0
+!i113 1
+Z5 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+vbcd_digit
+!i10b 1
+R0
+r1
+!s85 0
+31
+!s100 FN4BZR0m3RcIT?kW:9]Y@1
+I0dG0G7N561;jO0BLIhjkM0
+R1
+R2
+Z6 8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd_serial.v
+Z7 FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd_serial.v
+L0 67
+R3
+Z8 !s108 1462768262.000000
+Z9 !s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd_serial.v|
+Z10 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd_serial.v|
+!s101 -O0
+!i113 1
+R5
+vBeat_Generator
+!s110 1464472852
+!i10b 1
+!s100 M[VX[]edPCiEFOXi1h6_e1
+I9QIjkoK3B1d3`4A]Li^]62
+R0
+R1
+w1464472845
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Beat_Generator.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Beat_Generator.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1464472852.000000
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Beat_Generator.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Beat_Generator.v|
+!s101 -O0
+!i113 1
+R5
+n@beat_@generator
+vBeat_Generator_TB
+Z11 !s110 1464414386
+!i10b 1
+!s100 ;8nH>KDN5?Ez0Z^X[lezm2
+IR]VdPYz;D>O?ofSXL`9nW0
+R0
+R1
+Z12 w1462905212
+8C:\Users\Sarthak Dubey\iCloudDrive\Grad Files\Quarter 3\VLSI System Design\FPGA-DRUMS\EECS392\Beat_Dude\Beat_Generator_TB.v
+FC:\Users\Sarthak Dubey\iCloudDrive\Grad Files\Quarter 3\VLSI System Design\FPGA-DRUMS\EECS392\Beat_Dude\Beat_Generator_TB.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z13 !s108 1464414386.000000
+!s107 C:\Users\Sarthak Dubey\iCloudDrive\Grad Files\Quarter 3\VLSI System Design\FPGA-DRUMS\EECS392\Beat_Dude\Beat_Generator_TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Sarthak Dubey\iCloudDrive\Grad Files\Quarter 3\VLSI System Design\FPGA-DRUMS\EECS392\Beat_Dude\Beat_Generator_TB.v|
+!s101 -O0
+!i113 1
+R5
+n@beat_@generator_@t@b
+vbin2bcd8
+!i10b 1
+R0
+r1
+!s85 0
+31
+!s100 7B]zY=B8R<B0R@dLH0IF82
+I^NkG9=7g=00L4n<I5DGU33
+R1
+R2
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd8.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd8.v
+L0 4
+R3
+R4
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd8.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd8.v|
+!s101 -O0
+!i113 1
+R5
+vbin2bcd8_test
+!i10b 1
+R0
+r1
+!s85 0
+31
+!s100 e_amOon^lZ:XmY>Ch_>Xn0
+INT[K:QZ[nQ[57BaO^cK5B2
+R1
+R2
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd8_test.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd8_test.v
+L0 9
+R3
+R4
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd8_test.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd8_test.v|
+!s101 -O0
+!i113 1
+R5
+vbin2bcd_serial
+!i10b 1
+R0
+r1
+!s85 0
+31
+!s100 R3[GaKKn`5[b0LzP5hX`:0
+IzRz;ISNi3QlOk9WV=DIAU3
+R1
+R2
+R6
+R7
+L0 16
+R3
+R8
+R9
+R10
+!s101 -O0
+!i113 1
+R5
+vbin2bcd_serial_test
+!i10b 1
+R0
+r1
+!s85 0
+31
+!s100 CH:?eJ^3K6@hVCl47>jm_2
+I6SCAJH]UB=z6dg;;iG9I`0
+R1
+w1462768256
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd_serial_test.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd_serial_test.v
+L0 6
+R3
+R4
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd_serial_test.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/bin2bcd_serial_test.v|
+!s101 -O0
+!i113 1
+R5
+Ebinary_bcd
+R12
+Z14 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z15 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z16 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z17 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R1
+Z18 8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/binary_bcd.vhd
+Z19 FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/binary_bcd.vhd
+l0
+L5
+V_n^oY5zCNB`KMMXdDaN5d1
+!s100 B6>@dcm?No]9F2`=6HWm32
+Z20 OP;C;10.4a;61
+32
+R11
+!i10b 1
+R13
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/binary_bcd.vhd|
+Z22 !s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/binary_bcd.vhd|
+!i113 1
+Z23 o-work work -2002 -explicit -O0
+Z24 tExplicit 1
+Abehaviour
+R14
+R15
+R16
+R17
+DEx4 work 10 binary_bcd 0 22 _n^oY5zCNB`KMMXdDaN5d1
+l24
+L14
+V=VT=F2]aOY_@AZV?BiLdI1
+!s100 :FEUzT4HTBC6NT6VbSl6i3
+R20
+32
+R11
+!i10b 1
+R13
+R21
+R22
+!i113 1
+R23
+R24
+vData_Display
+Z25 !s110 1464065255
+!i10b 1
+!s100 4SiA]Z9ASmB^0b17GTCYX1
+I4?L=PloazjB0AAKN1VQ671
+R0
+R1
+R12
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Data_Display.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Data_Display.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z26 !s108 1464065255.000000
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Data_Display.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Data_Display.v|
+!s101 -O0
+!i113 1
+R5
+n@data_@display
+Efifo
+Z27 w1464414341
+Z28 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z29 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R16
+R17
+R1
+Z30 8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/fifo.vhd
+Z31 FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/fifo.vhd
+l0
+L8
+V@jTzkPRYP88U8>i0@1@3C1
+!s100 aG<m<f`i1jX^Mh8JI8ckz2
+R20
+32
+Z32 !s110 1464414387
+!i10b 1
+Z33 !s108 1464414387.000000
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/fifo.vhd|
+Z35 !s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/fifo.vhd|
+!i113 1
+R23
+R24
+Abehavior
+R28
+R29
+R16
+R17
+DEx4 work 4 fifo 0 22 @jTzkPRYP88U8>i0@1@3C1
+l92
+L29
+VNb;^U=SITP:11E^F9MNX^2
+!s100 W1mz;O;c8Lzci]c=9LmVK0
+R20
+32
+R32
+!i10b 1
+R33
+R34
+R35
+!i113 1
+R23
+R24
+vLCD_Controller
+R11
+!i10b 1
+!s100 Se9ZSNJWDEPNH3eZI1GLe2
+IAFG`F1WXi84X5HEC@A5;i0
+R0
+R1
+R12
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_controller.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_controller.v
+L0 1
+R3
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_controller.v|
+!s101 -O0
+!i113 1
+R5
+n@l@c@d_@controller
+vLCD_TEST
+R11
+!i10b 1
+!s100 Z>?WDb>`OJ4VQhKnMzF9[0
+Il?cc[c4_9Ml0A@NVbRSDP1
+R0
+R1
+R12
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_test.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_test.v
+L0 1
+R3
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_test.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_test.v|
+!s101 -O0
+!i113 1
+R5
+n@l@c@d_@t@e@s@t
+vlcdlab1
+R11
+!i10b 1
+!s100 dDAi9EbKlX3XHnECTWFCQ1
+I`=W_KT<;2XL6jekQU;zNk1
+R0
+R1
+R12
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcdlab1.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcdlab1.v
+L0 1
+R3
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcdlab1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcdlab1.v|
+!s101 -O0
+!i113 1
+R5
+vone_hertz
+R25
+!i10b 1
+!s100 J[YB58<`??:SbXNdbGXz@2
+I]zSI;nFBMFPJb2ZNag8Hc1
+R0
+R1
+R12
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/one_hertz.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/one_hertz.v
+L0 1
+R3
+r1
+!s85 0
+31
+R26
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/one_hertz.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/one_hertz.v|
+!s101 -O0
+!i113 1
+R5
+vPIPO
+R11
+!i10b 1
+!s100 5PXXSh@KaU7JbgbEMh6P`0
+IB=4=g8I0]n9n1z?J@7<Cn2
+R0
+R1
+w1464295624
+8C:\Users\Sarthak Dubey\iCloudDrive\Grad Files\Quarter 3\VLSI System Design\FPGA-DRUMS\EECS392\Beat_Dude\PIPO.v
+FC:\Users\Sarthak Dubey\iCloudDrive\Grad Files\Quarter 3\VLSI System Design\FPGA-DRUMS\EECS392\Beat_Dude\PIPO.v
+L0 1
+R3
+r1
+!s85 0
+31
+R13
+!s107 C:\Users\Sarthak Dubey\iCloudDrive\Grad Files\Quarter 3\VLSI System Design\FPGA-DRUMS\EECS392\Beat_Dude\PIPO.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Sarthak Dubey\iCloudDrive\Grad Files\Quarter 3\VLSI System Design\FPGA-DRUMS\EECS392\Beat_Dude\PIPO.v|
+!s101 -O0
+!i113 1
+R5
+n@p@i@p@o
+vPIPO_tb
+R11
+!i10b 1
+!s100 ?j@]ZeV11^hHM24HGjobT0
+IDMlBY3OLoFRQ:F^>T9QMm1
+R0
+R1
+w1462905201
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/PIPO_tb.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/PIPO_tb.v
+L0 1
+R3
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/PIPO_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/PIPO_tb.v|
+!s101 -O0
+!i113 1
+R5
+n@p@i@p@o_tb
+vReset_Delay
+R11
+!i10b 1
+!s100 :a6=f_e=9h4OJMHOIzcbE3
+IzGZzaZTFO?IAZ<G]K7;161
+R0
+R1
+R12
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/reset_delay.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/reset_delay.v
+L0 1
+R3
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/reset_delay.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/reset_delay.v|
+!s101 -O0
+!i113 1
+R5
+n@reset_@delay
+vSound_Connect
+!s110 1464414486
+!i10b 1
+!s100 YGeDXk?VA^Dkm5;aco:2n2
+IE]VMX`U=7ocmHdT>iQSj33
+R0
+R1
+w1464125763
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Sound_Connect.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Sound_Connect.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1464414486.000000
+!s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Sound_Connect.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Sound_Connect.v|
+!s101 -O0
+!i113 1
+R5
+n@sound_@connect
+Etb_bcd
+R12
+R16
+R17
+R1
+Z36 8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/binary_bcd_tb.vhd
+Z37 FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/binary_bcd_tb.vhd
+l0
+L4
+Vf6Abmo4AIoOV5V;K7Q:=;3
+!s100 3UZMQ59cbNXOUj>mWHIo30
+R20
+32
+R11
+!i10b 1
+R13
+Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/binary_bcd_tb.vhd|
+Z39 !s107 C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/binary_bcd_tb.vhd|
+!i113 1
+R23
+R24
+Abehavior
+R16
+R17
+DEx4 work 6 tb_bcd 0 22 f6Abmo4AIoOV5V;K7Q:=;3
+l39
+L7
+V4YgA0o8U7NU8_Dz4C:Z>02
+!s100 0nHNVWFLn;^VWc[_2`n0P1
+R20
+32
+R11
+!i10b 1
+R13
+R38
+R39
+!i113 1
+R23
+R24
+vtop
+R32
+!i10b 1
+!s100 TK]laWoehKgDX<FPA;=8l1
+ITnUazZ9d=8[C;H[V7UP^P1
+R0
+R1
+w1464122630
+8C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Top.v
+FC:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Top.v
+L0 4
+R3
+r1
+!s85 0
+31
+R13
+!s107 macros.vh|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Top.v|
+!s101 -O0
+!i113 1
+R5

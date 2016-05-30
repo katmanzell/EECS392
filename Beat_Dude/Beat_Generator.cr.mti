@@ -1,29 +1,95 @@
-{C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/PIPO.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/PIPO.v}
+{C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/fifo.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/fifo.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity fifo
+-- Compiling architecture behavior of fifo
+
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Sound_Connect.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Sound_Connect.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module Sound_Connect
+
+Top level modules:
+	Sound_Connect
+
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_controller.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_controller.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module LCD_Controller
+
+Top level modules:
+	LCD_Controller
+
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/binary_bcd_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/binary_bcd_tb.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_bcd
+-- Compiling architecture behavior of tb_bcd
+
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Beat_Generator_TB.v} {1 {vlog -work work -stats=none {C:\Users\Sarthak Dubey\iCloudDrive\Grad Files\Quarter 3\VLSI System Design\FPGA-DRUMS\EECS392\Beat_Dude\Beat_Generator_TB.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module Beat_Generator_TB
+
+Top level modules:
+	Beat_Generator_TB
+
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/PIPO.v} {1 {vlog -work work -stats=none {C:\Users\Sarthak Dubey\iCloudDrive\Grad Files\Quarter 3\VLSI System Design\FPGA-DRUMS\EECS392\Beat_Dude\PIPO.v}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module PIPO
 
 Top level modules:
 	PIPO
 
-} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/PIPO_tb.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/PIPO_tb.v}
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/binary_bcd.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/binary_bcd.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity binary_bcd
+-- Compiling architecture behaviour of binary_bcd
+
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/reset_delay.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/reset_delay.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module Reset_Delay
+
+Top level modules:
+	Reset_Delay
+
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_test.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcd_test.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module LCD_TEST
+
+Top level modules:
+	LCD_TEST
+
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Top.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/Top.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module top
+
+Top level modules:
+	top
+
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcdlab1.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/lcdlab1.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module lcdlab1
+
+Top level modules:
+	lcdlab1
+
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/PIPO_tb.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/PIPO_tb.v}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module PIPO_tb
 
 Top level modules:
 	PIPO_tb
 
-} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Generator.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Generator.v}
+} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/macros.vh} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Dude/macros.vh}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module Beat_Generator
-
-Top level modules:
-	Beat_Generator
-
-} {} {}} {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Generator_TB.v} {1 {vlog -work work -stats=none {C:/Users/Sarthak Dubey/iCloudDrive/Grad Files/Quarter 3/VLSI System Design/FPGA-DRUMS/EECS392/Beat_Generator_TB.v}
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module Beat_Generator_TB
-
-Top level modules:
-	Beat_Generator_TB
 
 } {} {}}

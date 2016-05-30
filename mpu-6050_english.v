@@ -1,4 +1,4 @@
-`include "macros.vh"
+`include"macros.vh"
 
 // I2C MPU-6050 Controller Module
 // Usage: controls the 2-bus I2C module
@@ -12,7 +12,7 @@ module MPU (
 	rst_n
 	);
 input clk;
-input	rst_n;
+input rst_n;
 output scl;
 output [7: 0] data;
 inout sda;
